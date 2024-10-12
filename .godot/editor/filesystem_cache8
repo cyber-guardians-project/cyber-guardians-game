@@ -1,3 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728759783
+::res://::1728760523
 icon.svg::CompressedTexture2D::787979140527834583::1728759775::1728759785::1::::<><>::
+README.md::TextFile::-1::1728759879::0::1::::<><>::
+::res://assets/::1728760426
+::res://assets/textures/::1728760440
+::res://assets/textures/player/::1728760630
+character-idle.png::CompressedTexture2D::3386416183434554594::1728760132::1728760471::1::::<><>::
+character-walk.png::CompressedTexture2D::4942076919898484027::1728760620::1728760643::1::::<><>::
+::res://modules/::1728760199
+::res://modules/player/::1728760566
+player.tscn::PackedScene::9004316342251963336::1728760566::0::1::::<><>::uid://boin1roprooy1::::res://assets/textures/player/character-idle.png
