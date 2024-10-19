@@ -30,3 +30,6 @@ position = Vector2(56, 120)
 
 [node name="QuestionPoint5" parent="Questions" instance=ExtResource("4_5kvp7")]
 position = Vector2(168, 120)
+
+[node name="QuestionPoint6" parent="Questions" instance=ExtResource("4_5kvp7")]
+position = Vector2(216, 120)
