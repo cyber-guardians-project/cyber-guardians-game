@@ -1,6 +1,4 @@
 res://modules/level_1/level_1.tscn
-res://modules/player/player.gd
 res://modules/player/player.tscn
-res://modules/level_1/level_1.gd
 res://modules/tile_map_layer/tile_map_layer.tscn
 res://modules/question_point/question_point.tscn
