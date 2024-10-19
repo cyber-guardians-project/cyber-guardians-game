@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1j01lpi8ckyq"]
+[gd_scene load_steps=14 format=3 uid="uid://d1j01lpi8ckyq"]
 
+[ext_resource type="Script" path="res://modules/player/player.gd" id="1_ip3rf"]
 [ext_resource type="Texture2D" uid="uid://boin1roprooy1" path="res://assets/textures/player/character-idle.png" id="1_oja0q"]
 [ext_resource type="Texture2D" uid="uid://ccn8jxiy5y1m2" path="res://assets/textures/player/character-walk.png" id="2_25iki"]
 
@@ -75,7 +76,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6urwr"]
 size = Vector2(14, 24)
 
-[node name="Node2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ip3rf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2k7dx")
@@ -88,4 +90,4 @@ frame_progress = 0.196622
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_6urwr")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
