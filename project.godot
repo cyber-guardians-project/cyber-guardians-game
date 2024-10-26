@@ -15,6 +15,10 @@ run/main_scene="res://modules/level_1/level_1.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Utils="*res://modules/utils/utils.gd"
+
 [display]
 
 window/size/viewport_width=240
@@ -62,11 +66,10 @@ reset={
 
 [layer_names]
 
-2d_render/layer_1="walk area"
-2d_render/layer_2="player"
 2d_physics/layer_1="walkable_area"
 2d_physics/layer_2="player"
 2d_physics/layer_3="world"
+2d_physics/layer_4="question_point"
 
 [rendering]
 

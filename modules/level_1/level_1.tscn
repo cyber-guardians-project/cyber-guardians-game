@@ -13,24 +13,23 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAI
 
 [node name="Questions" type="Node2D" parent="."]
 
-[node name="QuestionPoint" parent="Questions" instance=ExtResource("4_5kvp7")]
+[node name="QuestionPoint_1" parent="Questions" instance=ExtResource("4_5kvp7")]
 position = Vector2(56, 72)
 
-[node name="QuestionPoint2" parent="Questions" instance=ExtResource("4_5kvp7")]
+[node name="QuestionPoint_2" parent="Questions" instance=ExtResource("4_5kvp7")]
 position = Vector2(72, 25)
 
-[node name="QuestionPoint3" parent="Questions" instance=ExtResource("4_5kvp7")]
+[node name="QuestionPoint_3" parent="Questions" instance=ExtResource("4_5kvp7")]
 position = Vector2(167, 72)
 
-[node name="QuestionPoint4" parent="Questions" instance=ExtResource("4_5kvp7")]
+[node name="QuestionPoint_4" parent="Questions" instance=ExtResource("4_5kvp7")]
 position = Vector2(56, 120)
 
-[node name="QuestionPoint5" parent="Questions" instance=ExtResource("4_5kvp7")]
+[node name="QuestionPoint_5" parent="Questions" instance=ExtResource("4_5kvp7")]
 position = Vector2(168, 120)
 
-[node name="QuestionPoint6" parent="Questions" instance=ExtResource("4_5kvp7")]
+[node name="QuestionPoint_6" parent="Questions" instance=ExtResource("4_5kvp7")]
 position = Vector2(216, 120)
 
 [node name="Player" parent="." instance=ExtResource("2_rvovw")]
 position = Vector2(7, 64)
-collision_mask = 4

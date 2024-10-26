@@ -4,7 +4,7 @@ class_name Player
 
 @onready var animated_sprite = $AnimatedSprite2D
 
-@export var speed = 050
+@export var speed = 50
 
 func _physics_process(delta):
 	move_player()
@@ -18,15 +18,15 @@ func move_player():
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 		velocity = direction * speed
-
-		update_animation(direction)
-		move_and_slide()
-		
-func update_animation(direction: Vector2):
-	if direction == Vector2.ZERO:
-		animated_sprite.play("idle")
-		
-	if direction != Vector2.ZERO:
-		animated_sprite.play("idle")
-		
+	else:
+		velocity = Vector2.ZERO
 	
+	update_animation()
+	
+	move_and_slide()
+
+func update_animation():
+	if velocity == Vector2.ZERO:
+		animated_sprite.play("idle")
+	else:
+		animated_sprite.play("walk")
