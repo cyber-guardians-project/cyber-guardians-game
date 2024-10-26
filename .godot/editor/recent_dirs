@@ -1,4 +1,6 @@
 res://modules/utils
+res://modules/question_layer
+res://modules/background
 res://modules/level_5
 res://modules/level_4
 res://modules/level_3

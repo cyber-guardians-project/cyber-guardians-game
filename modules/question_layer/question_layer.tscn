@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccv7wu8nepgde"]
+
+[ext_resource type="PackedScene" uid="uid://l34qq80k8gb" path="res://modules/background/background.tscn" id="1_vmpeb"]
+[ext_resource type="Texture2D" uid="uid://cjmy5b81yjto8" path="res://assets/textures/backgrounds/Pink.png" id="2_5p874"]
+
+[node name="QuestionLayer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" parent="." instance=ExtResource("1_vmpeb")]
+background_texture = ExtResource("2_5p874")

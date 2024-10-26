@@ -5,3 +5,6 @@ res://modules/question_point/question_point.gd
 res://modules/player/player.tscn
 res://modules/utils/utils.gd
 res://modules/player/player.gd
+res://modules/background/background.tscn
+res://modules/question_layer/question_layer.tscn
+res://modules/background/background.gd
