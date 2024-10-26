@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var level = 1
+@export var level: int
 @onready var player = $Player
 @onready var questions = $Questions
 

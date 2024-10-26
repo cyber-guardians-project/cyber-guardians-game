@@ -1,3 +1,6 @@
+CheckBox
+OptionButton
+Label
 Sprite2D
 ParallaxLayer
 ParallaxBackground
@@ -9,6 +12,3 @@ Path2D
 Node2D
 CollisionShape2D
 Area2D
-TileMapLayer
-Camera2D
-AnimatedSprite2D
