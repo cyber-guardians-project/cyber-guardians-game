@@ -74,7 +74,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6urwr"]
-size = Vector2(14, 24)
+size = Vector2(10, 15)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ip3rf")
@@ -83,11 +83,9 @@ script = ExtResource("1_ip3rf")
 sprite_frames = SubResource("SpriteFrames_2k7dx")
 animation = &"idle"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.196622
+frame_progress = 0.0473549
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+light_mask = 2
+position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_6urwr")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
