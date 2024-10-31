@@ -18,6 +18,11 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	var question_instance = question_layer.instantiate()
+	var question = Utils.get_question(level, number)
+	
+	emit_signal('open_question')
+	
+	question_instance.question = question
 	
 	add_child(question_instance)
 	print(question_instance)

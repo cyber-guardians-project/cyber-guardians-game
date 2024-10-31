@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccv7wu8nepgde"]
+[gd_scene load_steps=5 format=3 uid="uid://ccv7wu8nepgde"]
 
 [ext_resource type="PackedScene" uid="uid://l34qq80k8gb" path="res://modules/background/background.tscn" id="1_vmpeb"]
+[ext_resource type="Script" path="res://modules/question_layer/question_layer.gd" id="1_xcvmb"]
 [ext_resource type="FontFile" uid="uid://ce85lx7m6w5hm" path="res://assets/fonts/Kenney Pixel Square.ttf" id="2_d4kem"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jf0vv"]
 font = ExtResource("2_d4kem")
+font_size = 7
 font_color = Color(0.968627, 0.141176, 0, 1)
 outline_size = 5
 
@@ -13,6 +15,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_xcvmb")
 
 [node name="Background" parent="." instance=ExtResource("1_vmpeb")]
 
@@ -23,9 +26,9 @@ anchor_left = 2.887
 anchor_top = 0.5
 anchor_right = 2.887
 anchor_bottom = 0.5
-offset_left = -38.48
+offset_left = -114.48
 offset_top = -15.0
-offset_right = 57.52
+offset_right = 122.52
 offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -33,7 +36,12 @@ text = "Pregunta"
 label_settings = SubResource("LabelSettings_jf0vv")
 horizontal_alignment = 1
 
-[node name="CheckBox" type="CheckBox" parent="."]
+[node name="QuestionOptions" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CheckBox" type="CheckBox" parent="QuestionOptions"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 35.0
