@@ -34,5 +34,3 @@ position = Vector2(216, 120)
 
 [node name="Player" parent="." instance=ExtResource("2_rvovw")]
 position = Vector2(7, 64)
-
-[connection signal="open_question" from="." to="." method="_on_open_question"]

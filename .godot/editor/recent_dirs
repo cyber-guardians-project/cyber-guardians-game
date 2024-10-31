@@ -1,3 +1,5 @@
+D:/Godot/projects/cyber-guardians-game/data
+D:/Godot/projects/cyber-guardians-game
 res://modules/utils
 res://modules/question_layer
 res://modules/background
@@ -8,7 +10,6 @@ res://assets/textures/maps
 res://modules/level_2
 res://modules/question_point
 res://modules/tile_map_layer
-D:/Godot/projects/cyber-guardians-game
 res://modules/level_1
 res://
 D:/java/jdk
