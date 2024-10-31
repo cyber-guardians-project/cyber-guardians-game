@@ -18,6 +18,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	tile_map_layer.visible = !is_question_active
+	player.visible = !is_question_active
 		
 func _on_open_question(is_open: bool):
 	is_question_active = is_open

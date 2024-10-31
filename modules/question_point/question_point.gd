@@ -23,8 +23,8 @@ func _on_body_entered(body: Node2D) -> void:
 	var question = Utils.get_question(level, number)
 	
 	open_question.emit(true)
-		 
 	question_instance.question = question
 	
-	add_child(question_instance)
+	get_tree().root.add_child(question_instance)
+	
 	print(question_instance)
