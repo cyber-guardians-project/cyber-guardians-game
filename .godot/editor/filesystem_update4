@@ -1,8 +1,11 @@
 res://modules/level_1/level_1.tscn
-res://modules/question_layer/question_layer.tscn
+res://themes/checkbox.tres
 res://modules/question_point/question_point.tscn
 res://modules/background/background.tscn
 res://modules/player/player.tscn
-res://modules/question_layer/question_layer.gd
 res://modules/level_2/level_2.tscn
-res://themes/checkbox.tres
+res://modules/question_layer/question_layer.tscn
+res://modules/tile_map_layer/tile_map_layer.tscn
+res://modules/level_3/level_3.tscn
+res://modules/level_4/level_4.tscn
+res://modules/level_5/level_5.tscn
