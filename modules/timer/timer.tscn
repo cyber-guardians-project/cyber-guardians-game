@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://djjqhh3jqoce7"]
+
+[ext_resource type="Script" path="res://modules/timer/timer.gd" id="1_6ws8y"]
+
+[node name="TimerContainer" type="Node"]
+script = ExtResource("1_6ws8y")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 300.0
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1.0
+offset_right = 239.0
+offset_bottom = 31.0
