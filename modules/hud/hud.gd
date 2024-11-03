@@ -1,31 +1,58 @@
 extends Node
 
 @onready var timer = $TimerContainer/Timer
-@onready var label = $TimerContainer/Label
+@onready var timer_label = $TimerContainer/Label
+@onready var lives_label = $LiveContainer/Lives
+@onready var score_label = $Score
 
-@export var total_time = 300
+@export var total_time: int
+@export var score: int
+@export var lives: int
+
 
 signal timer_timeout	
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	timer.wait_time = total_time
-	label.text = str(total_time)
-	
+	init_timer_hud()
+	init_score_hud()
+	init_lives_hud()
+	print(score)
 	start_timer()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	init_timer_hud()
+	
+	
+func init_timer_hud():
+	timer.wait_time = total_time
+	timer_label.text = str(total_time)
+	
 	var time_left = int(timer.time_left)
-	label.text = str(time_left)
+	timer_label.text = str(time_left)
 	
 	if time_left == 0:
-		label.text = '¡Se acabó el tiempo!'
+		timer_label.text = '¡Se acabó el tiempo!'
+		
+func init_score_hud():
+	score_label.text = str(score)
 	
+func init_lives_hud():
+	lives_label.text = 'X ' + str(lives)
+		
 func start_timer():
 	timer.connect('timeout', _on_timer_timeout)
 	timer.start()
 
 func _on_timer_timeout():
 	emit_signal('timer_timeout')
+
+func update_score(new_score: int) -> void:
+	score = new_score
+	score_label.text = 'Puntaje: ' + str(new_score)
+
+func update_lives(new_lives: int) -> void:
+	lives = new_lives
+	lives_label.text = 'X ' + str(lives)
