@@ -1,9 +1,11 @@
 extends Node
 
-@onready var timer = $Timer
-@onready var label = $Label
+@onready var timer = $TimerContainer/Timer
+@onready var label = $TimerContainer/Label
 
-@export var total_time = 3
+@export var total_time = 300
+
+signal timer_timeout	
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +19,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var time_left = int(timer.time_left)
 	label.text = str(time_left)
-	label.add_theme_font_size_override('font_size', 8)
 	
 	if time_left == 0:
 		label.text = '¡Se acabó el tiempo!'
@@ -27,4 +28,4 @@ func start_timer():
 	timer.start()
 
 func _on_timer_timeout():
-	label.text = '¡Se acabó el tiempo!'
+	emit_signal('timer_timeout')

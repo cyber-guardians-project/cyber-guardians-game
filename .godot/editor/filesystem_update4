@@ -12,3 +12,6 @@ res://modules/level_5/level_5.tscn
 res://modules/timer/timer.tscn
 res://modules/timer/timer.gd
 res://modules/utils/level.gd
+res://modules/hud/timer.tscn
+res://modules/hud/hud.tscn
+res://modules/hud/hud.gd

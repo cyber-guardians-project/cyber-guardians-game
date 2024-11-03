@@ -6,7 +6,7 @@ extends Node2D
 @onready var questions = $Questions
 @onready var tile_map_layer = $TileMapLayer
 @onready var is_question_active = false
-@onready var timer = preload("res://modules/timer/timer.tscn") as PackedScene
+@onready var timer = preload("res://modules/hud/hud.tscn") as PackedScene
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,6 +24,7 @@ func _on_open_question(is_open: bool):
 	
 func init_timer():
 	var timer_instance = timer.instantiate()
+	timer_instance.connect('timer_timeout', _on_timeout)
 	add_child(timer_instance)
 	
 func init_questions():
@@ -32,3 +33,5 @@ func init_questions():
 		question_point.number = Utils.get_question_number(question_point.name)
 		question_point.connect('open_question', _on_open_question)
 		
+func _on_timeout():
+	print('timeout')

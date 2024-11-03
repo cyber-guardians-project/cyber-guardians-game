@@ -1,4 +1,6 @@
 Label
+Sprite2D
+Control
 Timer
 Node
 HBoxContainer
@@ -6,9 +8,7 @@ VBoxContainer
 MarginContainer
 CheckBox
 Node2D
-Control
 Window
 OptionButton
-Sprite2D
 ParallaxLayer
 ParallaxBackground
