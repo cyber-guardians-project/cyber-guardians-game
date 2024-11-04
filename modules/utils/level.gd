@@ -51,6 +51,10 @@ func init_questions():
 		question_point.level = level
 		question_point.number = Utils.get_question_number(question_point.name)
 		question_point.connect('open_question', _on_open_question)
+		question_point.connect('select_option', _on_select_option)
 		
 func _on_timeout():
 	print('timeout')
+	
+func _on_select_option(option):
+	pass

@@ -8,15 +8,7 @@ signal question_entered(question_id)
 var question_layer = preload("res://modules/question_layer/question_layer.tscn")
 
 signal open_question(is_open: bool)
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+signal select_option(option)
 
 func _on_body_entered(body: Node2D) -> void:
 	var question_instance = question_layer.instantiate()
@@ -24,7 +16,9 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	open_question.emit(true)
 	question_instance.question = question
+	question_instance.connect('select_option', _on_select_option)
 	
 	get_tree().root.add_child(question_instance)
 	
-	print(question_instance)
+func _on_select_option(option):
+	select_option.emit(option)
