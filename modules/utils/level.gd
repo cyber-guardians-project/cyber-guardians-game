@@ -26,9 +26,10 @@ func _ready() -> void:
 	add_child(hud_instance)
 
 		
-func _process(delta: float) -> void:
+func _process(delta: float) -> void:			
 	tile_map_layer.visible = !is_question_active
 	player.visible = !is_question_active
+	player.active = !is_question_active
 	
 		
 func _on_open_question(is_open: bool):

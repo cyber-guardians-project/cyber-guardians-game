@@ -5,9 +5,11 @@ class_name Player
 @onready var animated_sprite = $AnimatedSprite2D
 
 @export var speed = 50
+@export var active = true
 
 func _physics_process(delta):
-	move_player()
+	if active:
+		move_player()
 
 func move_player():
 	var direction = Vector2(

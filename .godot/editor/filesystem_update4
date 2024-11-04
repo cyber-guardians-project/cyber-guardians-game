@@ -19,3 +19,4 @@ res://modules/question_layer/question_layer.gd
 res://modules/checkbox/check_box.tscn
 res://modules/checkbox/check_box.gd
 res://modules/question_point/question_point.gd
+res://modules/player/player.gd

@@ -11,7 +11,7 @@ extends Node
 
 signal timer_timeout	
 
-func _ready() -> void:
+func _ready() -> void:	
 	init_timer_hud()
 	init_score_hud()
 	init_lives_hud()
