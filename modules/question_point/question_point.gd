@@ -7,6 +7,7 @@ signal question_entered(question_id)
 @export var active: bool = true
 
 var question_layer = preload("res://modules/question_layer/question_layer.tscn")
+var dialog = preload("res://modules/dialog/dialog.tscn")
 var question_layer_instance
 
 signal open_question(is_open: bool)
@@ -26,9 +27,19 @@ func _on_body_entered(body: Node2D) -> void:
 		get_tree().root.add_child(question_instance)
 	
 func _on_select_option(option):
+	var dialog = dialog.instantiate()
+	var dialog_text = 'Intenta de nuevo'
+	
 	if option['is_correct']:
 		question_layer_instance.queue_free()
 		open_question.emit(false)
 		finish_question.emit(self)
-		
+		dialog_text = '¡Respuesta Correcta!'
+				
+	
+	dialog.text = dialog_text
+	add_child(dialog)
+	
 	select_option.emit(option)
+	
+	
