@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://ban8vqr32420f"]
+
+[ext_resource type="Texture2D" uid="uid://dtnvrnhf1w62f" path="res://assets/textures/screen/logo.png" id="1_o48fr"]
+
+[node name="StartMenu" type="ColorRect"]
+offset_right = 240.0
+offset_bottom = 159.0
+color = Color(0.0313726, 0.172549, 0.313726, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(120, 24.5)
+scale = Vector2(0.247917, 0.209821)
+texture = ExtResource("1_o48fr")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -100.0
+offset_right = 65.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="New" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Nueva Partida
+"
+flat = true
+
+[node name="Continue" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Continuar
+"
+flat = true
+
+[node name="Learn" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Aprender"
+flat = true
+
+[node name="Exit" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Salir
+"
+flat = true
