@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://ban8vqr32420f"]
+[gd_scene load_steps=3 format=3 uid="uid://ban8vqr32420f"]
 
 [ext_resource type="Texture2D" uid="uid://dtnvrnhf1w62f" path="res://assets/textures/screen/logo.png" id="1_o48fr"]
+[ext_resource type="Script" path="res://modules/start_menu/start_menu.gd" id="1_qan61"]
 
 [node name="StartMenu" type="ColorRect"]
 offset_right = 240.0
 offset_bottom = 159.0
 color = Color(0.0313726, 0.172549, 0.313726, 1)
+script = ExtResource("1_qan61")
 
 [node name="Logo" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -29,6 +31,9 @@ grow_vertical = 0
 
 [node name="New" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.4941, 0.81, 0.541485, 1)
+theme_override_colors/font_pressed_color = Color(0.494118, 0.811765, 0.541176, 1)
+theme_override_colors/font_focus_color = Color(0.555321, 0.564909, 0.449898, 1)
 theme_override_font_sizes/font_size = 8
 text = "Nueva Partida
 "
@@ -36,6 +41,9 @@ flat = true
 
 [node name="Continue" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.494118, 0.811765, 0.541176, 1)
+theme_override_colors/font_pressed_color = Color(0.320388, 0.276468, 0.316172, 1)
+theme_override_colors/font_focus_color = Color(0, 0.39123, 3.85046e-07, 1)
 theme_override_font_sizes/font_size = 8
 text = "Continuar
 "
@@ -43,13 +51,24 @@ flat = true
 
 [node name="Learn" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.76, 0.3648, 0.3648, 1)
+theme_override_colors/font_pressed_color = Color(0.560784, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.43305, 0.0415662, 0.21078, 1)
 theme_override_font_sizes/font_size = 8
 text = "Aprender"
 flat = true
 
 [node name="Exit" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.760784, 0.364706, 0.364706, 1)
+theme_override_colors/font_pressed_color = Color(0.377227, 0.586194, 0.930209, 1)
+theme_override_colors/font_focus_color = Color(0.625424, 0.368493, 0.972032, 1)
 theme_override_font_sizes/font_size = 8
 text = "Salir
 "
 flat = true
+
+[connection signal="pressed" from="HBoxContainer/New" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="HBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="HBoxContainer/Learn" to="." method="_on_learn_pressed"]
+[connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]
