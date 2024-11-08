@@ -38,7 +38,7 @@ func create_option_checkbox(option: Dictionary, index: int) -> void:
 #
 	question_options_control.add_child(checkbox)
 
-func clear_children() -> void:
+func clear_children():
 	for child in question_options_control.get_children():
 		question_options_control.remove_child(child)
 		child.queue_free()

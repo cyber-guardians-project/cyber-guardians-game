@@ -2,7 +2,7 @@ extends Node2D
 
 @export var level: int
 @export var lives: int = 3
-@export var time: int = 150
+@export var time: int = 60
 @export var score: int = 0
 @export var score_to_add: int = 100
 
@@ -13,9 +13,10 @@ extends Node2D
 @onready var hud = preload("res://modules/hud/hud.tscn") as PackedScene
 
 var hud_instance
+@onready var retry_dialog = preload("res://modules/dialog/dialog.tscn") as PackedScene
 
 
-func _ready() -> void:
+func _ready():
 	hud_instance = hud.instantiate()
 	
 	init_timer()
@@ -26,7 +27,7 @@ func _ready() -> void:
 	add_child(hud_instance)
 
 		
-func _process(delta: float) -> void:			
+func _process(delta: float):			
 	tile_map_layer.visible = !is_question_active
 	player.visible = !is_question_active
 	player.active = !is_question_active
@@ -55,8 +56,8 @@ func init_questions():
 		question_point.connect('finish_question', _on_finish_question)
 		
 func _on_timeout():
-	print('timeout')
-	
+	reset_level('¡Se acabó el tiempo! Intenta Nuevamente')
+
 func _on_select_option(option):
 	if option['is_correct']:
 		score += score_to_add
@@ -67,6 +68,20 @@ func _on_select_option(option):
 		lives -= 1
 		hud_instance.update_lives(lives)
 		
+		if lives <= 0:
+			reset_level('Intenta Nuevamente')
+			
+		
 func _on_finish_question(question_point):
 	question_point.active = false
+	
+func reset_level(message: String) -> void:
+	var dialog_instance = retry_dialog.instantiate()
+	
+	dialog_instance.text = message
+	add_child(dialog_instance)
+	
+	await get_tree().create_timer(2.0).timeout
+	
+	get_tree().reload_current_scene()
 	
