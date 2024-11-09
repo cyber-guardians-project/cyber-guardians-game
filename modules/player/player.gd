@@ -7,6 +7,7 @@ class_name Player
 @export var speed = 50
 @export var active = true
 @export var variation = 1
+@export var animation: String
 
 var variations = {}
 
@@ -19,6 +20,10 @@ func _ready():
 func _physics_process(delta):
 	if active:
 		move_player()
+		
+func _process(delta: float) -> void:
+	if animation:
+		animated_sprite.play(animation)
 
 func move_player():
 	var direction = Vector2(

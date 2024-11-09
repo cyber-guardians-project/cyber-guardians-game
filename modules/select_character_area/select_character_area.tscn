@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgkw7yh376j78"]
+
+[ext_resource type="Script" path="res://modules/select_character_area/select_character_area.gd" id="1_ptjdb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_deo4r"]
+size = Vector2(14, 24)
+
+[node name="SelectCharacterArea" type="Area2D"]
+z_index = 2
+position = Vector2(-31, -15)
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_ptjdb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(31, 17)
+shape = SubResource("RectangleShape2D_deo4r")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

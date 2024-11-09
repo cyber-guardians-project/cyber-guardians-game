@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dunhvufcfosw8"]
+[gd_scene load_steps=4 format=3 uid="uid://dunhvufcfosw8"]
 
+[ext_resource type="Script" path="res://modules/select_character/select_character.gd" id="1_ir1ps"]
 [ext_resource type="PackedScene" uid="uid://d1j01lpi8ckyq" path="res://modules/player/player.tscn" id="1_nsh1n"]
+[ext_resource type="PackedScene" uid="uid://bgkw7yh376j78" path="res://modules/select_character_area/select_character_area.tscn" id="2_c64u0"]
 
 [node name="SelectCharacter" type="ColorRect"]
 offset_right = 240.0
 offset_bottom = 160.0
+mouse_filter = 2
 color = Color(0.0313726, 0.172549, 0.313726, 1)
+script = ExtResource("1_ir1ps")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -27,19 +31,32 @@ offset_top = 57.0
 offset_right = 236.0
 offset_bottom = 97.0
 
-[node name="Player" parent="CharactersContainer" instance=ExtResource("1_nsh1n")]
-position = Vector2(31, 15)
+[node name="Player_1" parent="CharactersContainer" instance=ExtResource("1_nsh1n")]
+position = Vector2(36, 15)
+active = false
 variation = 1
 
-[node name="Player2" parent="CharactersContainer" instance=ExtResource("1_nsh1n")]
-position = Vector2(95, 15)
+[node name="SelectCharacterArea" parent="CharactersContainer/Player_1" instance=ExtResource("2_c64u0")]
 
-[node name="Player3" parent="CharactersContainer" instance=ExtResource("1_nsh1n")]
+[node name="Player_2" parent="CharactersContainer" instance=ExtResource("1_nsh1n")]
+position = Vector2(95, 15)
+active = false
+
+[node name="SelectCharacterArea" parent="CharactersContainer/Player_2" instance=ExtResource("2_c64u0")]
+
+[node name="Player_3" parent="CharactersContainer" instance=ExtResource("1_nsh1n")]
 position = Vector2(159, 15)
+active = false
 variation = 3
 
-[node name="Player4" parent="CharactersContainer" instance=ExtResource("1_nsh1n")]
+[node name="SelectCharacterArea" parent="CharactersContainer/Player_3" instance=ExtResource("2_c64u0")]
+
+[node name="Player_4" parent="CharactersContainer" instance=ExtResource("1_nsh1n")]
 position = Vector2(217, 15)
+active = false
+variation = 4
+
+[node name="SelectCharacterArea" parent="CharactersContainer/Player_4" instance=ExtResource("2_c64u0")]
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1

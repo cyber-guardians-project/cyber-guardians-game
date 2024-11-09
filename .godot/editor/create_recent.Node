@@ -1,3 +1,5 @@
+CollisionShape2D
+Area2D
 Button
 HBoxContainer
 Control
@@ -10,5 +12,3 @@ MarginContainer
 CanvasLayer
 AcceptDialog
 TextureButton
-MenuButton
-Popup
