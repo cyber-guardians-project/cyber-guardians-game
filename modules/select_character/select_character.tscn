@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://dunhvufcfosw8"]
+
+[ext_resource type="PackedScene" uid="uid://d1j01lpi8ckyq" path="res://modules/player/player.tscn" id="1_nsh1n"]
+
+[node name="SelectCharacter" type="ColorRect"]
+offset_right = 240.0
+offset_bottom = 160.0
+color = Color(0.0313726, 0.172549, 0.313726, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.0
+offset_top = 9.0
+offset_right = 53.0
+offset_bottom = 32.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "Seleccionar personaje"
+
+[node name="CharactersContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 57.0
+offset_right = 236.0
+offset_bottom = 97.0
+
+[node name="Player" parent="CharactersContainer" instance=ExtResource("1_nsh1n")]
+position = Vector2(31, 15)
+variation = 1
+
+[node name="Player2" parent="CharactersContainer" instance=ExtResource("1_nsh1n")]
+position = Vector2(95, 15)
+
+[node name="Player3" parent="CharactersContainer" instance=ExtResource("1_nsh1n")]
+position = Vector2(159, 15)
+variation = 3
+
+[node name="Player4" parent="CharactersContainer" instance=ExtResource("1_nsh1n")]
+position = Vector2(217, 15)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_top = -48.0
+offset_right = 29.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "Aceptar"

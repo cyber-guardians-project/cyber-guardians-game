@@ -1,8 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1j01lpi8ckyq"]
+[gd_scene load_steps=16 format=3 uid="uid://d1j01lpi8ckyq"]
 
 [ext_resource type="Script" path="res://modules/player/player.gd" id="1_ip3rf"]
 [ext_resource type="Texture2D" uid="uid://boin1roprooy1" path="res://assets/textures/player/character-idle.png" id="1_oja0q"]
+[ext_resource type="Shader" path="res://modules/player/player.gdshader" id="2_6b3j3"]
 [ext_resource type="Texture2D" uid="uid://ccn8jxiy5y1m2" path="res://assets/textures/player/character-walk.png" id="2_25iki"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xvbat"]
+shader = ExtResource("2_6b3j3")
+shader_parameter/target_color1 = null
+shader_parameter/target_color2 = null
+shader_parameter/replacement_color1 = null
+shader_parameter/replacement_color2 = null
+shader_parameter/tolerance = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_he66e"]
 atlas = ExtResource("1_oja0q")
@@ -80,12 +89,12 @@ size = Vector2(10, 15)
 collision_layer = 2
 collision_mask = 12
 script = ExtResource("1_ip3rf")
+variation = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_xvbat")
 sprite_frames = SubResource("SpriteFrames_2k7dx")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.965683
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8.5)

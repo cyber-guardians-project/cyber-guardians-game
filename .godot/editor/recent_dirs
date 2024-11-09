@@ -1,9 +1,9 @@
+D:/Godot/projects/cyber-guardians-game/data
+res://modules/select_character
 res://themes
 res://modules/dialog
 res://modules/start_menu
 res://modules/checkbox
-D:/Godot/projects/cyber-guardians-game/assets/resources/checkbox
-D:/Godot/projects/cyber-guardians-game/data
 D:/Godot/projects/cyber-guardians-game
 res://modules/utils
 res://modules/question_layer
@@ -19,4 +19,3 @@ res://modules/level_1
 res://
 D:/java/jdk
 D:/android/sdk
-res://assets/textures/player

@@ -6,7 +6,16 @@ class_name Player
 
 @export var speed = 50
 @export var active = true
+@export var variation = 1
 
+var variations = {}
+
+func _ready():
+	if variation != 1:
+		variations = Utils.get_player_variations()
+		set_color()
+		
+		
 func _physics_process(delta):
 	if active:
 		move_player()
@@ -32,3 +41,24 @@ func update_animation():
 		animated_sprite.play("idle")
 	else:
 		animated_sprite.play("walk")
+		
+func set_color():
+	var original_material = animated_sprite.material as ShaderMaterial
+	var shader_material = original_material.duplicate() as ShaderMaterial
+	
+	animated_sprite.material = shader_material
+	
+	var default_variation = variations.filter(func(value): return value.id == 1)
+	var requested_variation = variations.filter(func(value): return value.id == variation )
+	
+	var default_primary_color_vector = Utils.convertHexToVector(default_variation[0].primary)
+	var default_secondary_color_vector = Utils.convertHexToVector(default_variation[0].secondary)
+	var requested_primary_color_vector = Utils.convertHexToVector(requested_variation[0].primary)
+	var requested_secondary_color_vector = Utils.convertHexToVector(requested_variation[0].secondary)
+
+
+	shader_material.set_shader_parameter("target_color1", default_primary_color_vector)
+	shader_material.set_shader_parameter("target_color2", default_secondary_color_vector)
+	shader_material.set_shader_parameter("replacement_color1", requested_primary_color_vector)
+	shader_material.set_shader_parameter("replacement_color2", requested_secondary_color_vector)
+	shader_material.set_shader_parameter("tolerance", 0.2)
