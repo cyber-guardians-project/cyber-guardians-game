@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnn2dpn8ek0uy"]
+[gd_scene load_steps=10 format=3 uid="uid://cnn2dpn8ek0uy"]
 
 [ext_resource type="PackedScene" uid="uid://l34qq80k8gb" path="res://modules/background/background.tscn" id="1_len8w"]
 [ext_resource type="LabelSettings" uid="uid://dx6m01o4m60ek" path="res://themes/game_over.tres" id="1_oyx3t"]
@@ -8,6 +8,7 @@
 [ext_resource type="LabelSettings" uid="uid://bsw2b0ga6edph" path="res://themes/result_label.tres" id="4_tbxhs"]
 [ext_resource type="LabelSettings" uid="uid://dlbnl1cobwlae" path="res://themes/resutl_label_value.tres" id="5_0dnnb"]
 [ext_resource type="LabelSettings" uid="uid://b7pushxxpv4sb" path="res://themes/result_message.tres" id="7_5nkei"]
+[ext_resource type="Theme" uid="uid://oeqr8taxjal2" path="res://themes/button.tres" id="9_a17xf"]
 
 [node name="ResultsScreen" type="CanvasLayer"]
 script = ExtResource("1_tgusi")
@@ -120,9 +121,12 @@ anchor_bottom = 1.0
 offset_top = -17.0
 offset_right = 22.0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 6
+theme = ExtResource("9_a17xf")
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 8
 text = "Salir
 "
+flat = true
 
 [node name="Menu" type="Button" parent="Control"]
 layout_mode = 1
@@ -136,8 +140,11 @@ offset_top = -17.0
 offset_right = 10.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 6
-text = "menu"
+theme = ExtResource("9_a17xf")
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 8
+text = "Menú"
+flat = true
 
 [node name="Continue" type="Button" parent="Control"]
 layout_mode = 1
@@ -150,9 +157,12 @@ offset_left = -38.0
 offset_top = -17.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 6
+theme = ExtResource("9_a17xf")
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 8
 text = "Continuar
 "
+flat = true
 
 [connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Control/Menu" to="." method="_on_menu_pressed"]

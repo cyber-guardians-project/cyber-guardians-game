@@ -24,3 +24,4 @@ res://modules/select_character_area/select_character_area.tscn
 res://modules/select_character/select_character.tscn
 res://modules/utils/utils.gd
 res://modules/level_2/level_2.tscn
+res://themes/button.tres

@@ -17,6 +17,10 @@ func _ready() -> void:
 	init_parameters()
 	
 	if not is_win: coninue_button.text = 'Reiniciar'
+	
+	if is_win and level_number == Utils.last_level:
+		coninue_button.text = 'Ver créditos'
+		
 		
 
 func init_parameters():
