@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d1j01lpi8ckyq"]
+[gd_scene load_steps=15 format=3 uid="uid://d1j01lpi8ckyq"]
 
 [ext_resource type="Script" path="res://modules/player/player.gd" id="1_ip3rf"]
 [ext_resource type="Texture2D" uid="uid://boin1roprooy1" path="res://assets/textures/player/character-idle.png" id="1_oja0q"]
@@ -29,19 +29,15 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("1_oja0q")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rw4yf"]
-atlas = ExtResource("2_25iki")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n3q71"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewcak"]
 atlas = ExtResource("2_25iki")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r7ria"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwxhs"]
 atlas = ExtResource("2_25iki")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8vrer"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiys2"]
 atlas = ExtResource("2_25iki")
 region = Rect2(96, 0, 32, 32)
 
@@ -66,16 +62,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rw4yf")
+"texture": SubResource("AtlasTexture_ewcak")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n3q71")
+"texture": SubResource("AtlasTexture_jwxhs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r7ria")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8vrer")
+"texture": SubResource("AtlasTexture_wiys2")
 }],
 "loop": true,
 "name": &"walk",

@@ -89,9 +89,10 @@ func reset_level(message: String) -> void:
 	dialog_instance.text = message
 	add_child(dialog_instance)
 	
-	await get_tree().create_timer(2.0).timeout
-	
+	_ready()
+		
 	get_tree().reload_current_scene()
+	
 	
 func get_character():
 	character_variation = StateManager.get_character_variation()
