@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnn2dpn8ek0uy"]
+[gd_scene load_steps=9 format=3 uid="uid://cnn2dpn8ek0uy"]
 
 [ext_resource type="PackedScene" uid="uid://l34qq80k8gb" path="res://modules/background/background.tscn" id="1_len8w"]
 [ext_resource type="LabelSettings" uid="uid://dx6m01o4m60ek" path="res://themes/game_over.tres" id="1_oyx3t"]
@@ -7,6 +7,7 @@
 [ext_resource type="LabelSettings" uid="uid://4l3tdaa3byi5" path="res://themes/sub_mesage_label.tres" id="4_soxlt"]
 [ext_resource type="LabelSettings" uid="uid://bsw2b0ga6edph" path="res://themes/result_label.tres" id="4_tbxhs"]
 [ext_resource type="LabelSettings" uid="uid://dlbnl1cobwlae" path="res://themes/resutl_label_value.tres" id="5_0dnnb"]
+[ext_resource type="LabelSettings" uid="uid://b7pushxxpv4sb" path="res://themes/result_message.tres" id="7_5nkei"]
 
 [node name="ResultsScreen" type="CanvasLayer"]
 script = ExtResource("1_tgusi")
@@ -92,7 +93,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "¡Intentalo de nuevo!"
-label_settings = ExtResource("1_oyx3t")
+label_settings = ExtResource("7_5nkei")
 
 [node name="SubMessage" type="Label" parent="Background/MessageContainer"]
 layout_mode = 2

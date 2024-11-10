@@ -14,6 +14,8 @@ extends Node2D
 
 const RESULTS_SCREEN_SCENE = "res://modules/results_screen/results_screen.tscn"
 
+var results_sceen = preload("res://modules/results_screen/results_screen.tscn")
+
 var hud_instance
 var character_variation
 
@@ -67,7 +69,7 @@ func init_questions():
 func _on_timeout():
 	show_dialog('¡Se acabó el tiempo!')
 	await get_tree().create_timer(2.0).timeout
-	show_results_screen()
+	show_results_screen('¡Se Agotó El Tiempo!', false, '¡Intentalo De Nuevo!')
 	
 
 func _on_select_option(option):
@@ -83,7 +85,7 @@ func _on_select_option(option):
 		if lives <= 0:
 			#show_dialog('Intenta Nuevamente')
 			await get_tree().create_timer(2.0).timeout
-			show_results_screen()
+			show_results_screen('¡Has Perdido!', false, '¡Intentalo De Nuevo!')
 			
 		
 func _on_finish_question(question_point):
@@ -100,19 +102,26 @@ func get_character():
 	character_variation = StateManager.get_character_variation()
 	player.variation = character_variation
 	
-func show_results_screen():
-	await Utils.transition()
-	
+func show_results_screen(title: String, is_win: bool, message: String):
+	await Utils.transition()	
 	var root = get_tree().root.get_children()
 	
 	for child in root:
 		if child != self:
 			child.queue_free()
-		
-	get_tree().change_scene_to_file(RESULTS_SCREEN_SCENE)
+			
+	var scene = results_sceen.instantiate()
+	scene.title_text = title
+	scene.level_number = level
+	scene.is_win = is_win
+	scene.message_text = message
+	
+	get_tree().root.add_child(scene)
+	queue_free()
+	
 	
 func _on_show_score():
-	show_results_screen()
+	show_results_screen('Resultados Nivel ' + str(level), true, '!Felicidades ' + StateManager.get_player_name() + '!')
 	
 	
 	

@@ -17,3 +17,4 @@ res://themes/resutl_label_value.tres
 res://themes/sub_mesage_label.tres
 res://modules/question_point/question_point.gd
 res://modules/results_screen/results_screen.gd
+res://themes/result_message.tres
