@@ -18,3 +18,9 @@ res://themes/sub_mesage_label.tres
 res://modules/question_point/question_point.gd
 res://modules/results_screen/results_screen.gd
 res://themes/result_message.tres
+res://modules/start_menu/start_menu.tscn
+res://themes/line_gradient.tres
+res://modules/select_character_area/select_character_area.tscn
+res://modules/select_character/select_character.tscn
+res://modules/utils/utils.gd
+res://modules/level_2/level_2.tscn

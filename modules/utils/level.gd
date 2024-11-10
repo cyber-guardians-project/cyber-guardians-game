@@ -2,7 +2,7 @@ extends Node2D
 
 @export var level: int
 @export var lives: int = 3
-@export var time: int = 60
+@export var time: int = 5
 @export var score: int = 0
 @export var score_to_add: int = 100
 
@@ -103,20 +103,25 @@ func get_character():
 	player.variation = character_variation
 	
 func show_results_screen(title: String, is_win: bool, message: String):
-	await Utils.transition()	
-	var root = get_tree().root.get_children()
+	await Utils.transition()
 	
-	for child in root:
-		if child != self:
+	var root_children = get_tree().root.get_children()
+	
+	var globals_to_keep = [Utils, State, StateManager, TransitionScreen]
+	
+	# Iterate through all children and free those that are not in the globals list
+	for child in root_children:
+		if child not in globals_to_keep:
 			child.queue_free()
-			
-	var scene = results_sceen.instantiate()
-	scene.title_text = title
-	scene.level_number = level
-	scene.is_win = is_win
-	scene.message_text = message
 	
-	get_tree().root.add_child(scene)
+	var results_screen_instance = results_sceen.instantiate()
+	results_screen_instance.title_text = title
+	results_screen_instance.level_number = level
+	results_screen_instance.is_win = is_win
+	results_screen_instance.message_text = message
+	
+	get_tree().root.add_child(results_screen_instance)
+	
 	queue_free()
 	
 	

@@ -82,9 +82,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -77.5
-offset_top = -54.0
+offset_top = -63.0
 offset_right = 77.5
-offset_bottom = -14.0
+offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -96,9 +96,64 @@ text = "¡Intentalo de nuevo!"
 label_settings = ExtResource("7_5nkei")
 
 [node name="SubMessage" type="Label" parent="Background/MessageContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 text = "(e) para reiniciar nivel
 (r) para volver a la pantalla de inicio
 (1) para salir del juego"
 label_settings = ExtResource("4_soxlt")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Exit" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+offset_right = 22.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 6
+text = "Salir
+"
+
+[node name="Menu" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -17.0
+offset_right = 10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 6
+text = "menu"
+
+[node name="Continue" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -38.0
+offset_top = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 6
+text = "Continuar
+"
+
+[connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Control/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Control/Continue" to="." method="_on_continue_pressed"]
