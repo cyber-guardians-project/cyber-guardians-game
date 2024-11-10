@@ -12,7 +12,7 @@ class_name Player
 var variations = {}
 
 func _ready():
-	if variation != 1:
+	if variation >= 1:
 		variations = Utils.get_player_variations()
 		set_color()
 		

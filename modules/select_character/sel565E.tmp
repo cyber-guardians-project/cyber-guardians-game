@@ -36,13 +36,13 @@ offset_bottom = 97.0
 [node name="Player_1" parent="CharactersContainer" instance=ExtResource("1_nsh1n")]
 position = Vector2(36, 15)
 active = false
+variation = 1
 
 [node name="SelectCharacterArea" parent="CharactersContainer/Player_1" instance=ExtResource("2_c64u0")]
 
 [node name="Player_2" parent="CharactersContainer" instance=ExtResource("1_nsh1n")]
 position = Vector2(95, 15)
 active = false
-variation = 2
 
 [node name="SelectCharacterArea" parent="CharactersContainer/Player_2" instance=ExtResource("2_c64u0")]
 

@@ -13,10 +13,16 @@ extends Node2D
 @onready var hud = preload("res://modules/hud/hud.tscn") as PackedScene
 
 var hud_instance
+var character_variation
+
 @onready var retry_dialog = preload("res://modules/dialog/dialog.tscn") as PackedScene
 
 
 func _ready():
+	print(player.variation)
+	get_character()
+	print(player.variation)
+
 	hud_instance = hud.instantiate()
 	
 	init_timer()
@@ -25,6 +31,7 @@ func _ready():
 	
 	init_questions()
 	add_child(hud_instance)
+	
 
 		
 func _process(delta: float):			
@@ -84,4 +91,8 @@ func reset_level(message: String) -> void:
 	await get_tree().create_timer(2.0).timeout
 	
 	get_tree().reload_current_scene()
+	
+func get_character():
+	character_variation = StateManager.get_character_variation()
+	player.variation = character_variation
 	

@@ -2,6 +2,8 @@ extends Node
 
 var questions_data_path = 'res://data/questions.json'
 var player_variations_path = 'res://data/player_varations.json'
+var game_state_path = 'res://data/game_state.json'
+
 
 func get_question_number(question_name: String) -> int:
 	var question_name_parts: Array = question_name.split('_')

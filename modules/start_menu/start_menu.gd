@@ -1,9 +1,10 @@
 extends Control
 
-@onready var select_character_scene = "res://modules/select_character/select_character.tscn"
+const SELECT_CHARACTER_SCENE = "res://modules/select_character/select_character.tscn"
+
 
 func _on_new_pressed():
-	get_tree().change_scene_to_file(select_character_scene)
+	get_tree().change_scene_to_file(SELECT_CHARACTER_SCENE)
 
 
 func _on_continue_pressed():

@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Utils="*res://modules/utils/utils.gd"
+State="*res://modules/utils/state.gd"
+StateManager="*res://modules/utils/state_manager.gd"
 
 [display]
 
