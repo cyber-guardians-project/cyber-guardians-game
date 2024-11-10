@@ -1,8 +1,8 @@
+res://themes
 D:/Godot/projects/cyber-guardians-game
 res://modules/transition_screen
 res://assets/textures/player
 res://modules/utils
-res://themes
 res://modules/select_character_area
 D:/Godot/projects/cyber-guardians-game/data
 res://modules/select_character
@@ -19,4 +19,3 @@ res://modules/level_2
 res://modules/question_point
 res://modules/tile_map_layer
 res://modules/level_1
-res://

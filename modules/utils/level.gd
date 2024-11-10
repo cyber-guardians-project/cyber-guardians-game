@@ -12,6 +12,8 @@ extends Node2D
 @onready var is_question_active = false
 @onready var hud = preload("res://modules/hud/hud.tscn") as PackedScene
 
+const RESULTS_SCREEN_SCENE = "res://modules/results_screen/results_screen.tscn"
+
 var hud_instance
 var character_variation
 
@@ -61,8 +63,10 @@ func init_questions():
 		question_point.connect('finish_question', _on_finish_question)
 		
 func _on_timeout():
-	await Utils.transition()
-	reset_level('¡Se acabó el tiempo! Intenta Nuevamente')
+	show_dialog('¡Se acabó el tiempo!')
+	await get_tree().create_timer(2.0).timeout
+	show_results_screen()
+	
 
 func _on_select_option(option):
 	if option['is_correct']:
@@ -75,26 +79,35 @@ func _on_select_option(option):
 		hud_instance.update_lives(lives)
 		
 		if lives <= 0:
-			reset_level('Intenta Nuevamente')
+			#show_dialog('Intenta Nuevamente')
+			await get_tree().create_timer(2.0).timeout
+			show_results_screen()
 			
 		
 func _on_finish_question(question_point):
 	question_point.active = false
 	
-func reset_level(message: String) -> void:
-	await Utils.transition()
-
+func show_dialog(message: String) -> void:
 	var dialog_instance = retry_dialog.instantiate()
 	
 	dialog_instance.text = message
 	add_child(dialog_instance)
 	
-	_ready()
-		
-	get_tree().reload_current_scene()
-	
 	
 func get_character():
 	character_variation = StateManager.get_character_variation()
 	player.variation = character_variation
+	
+func show_results_screen():
+	await Utils.transition()
+	
+	var root = get_tree().root.get_children()
+	
+	for child in root:
+		if child != self:
+			child.queue_free()
+		
+	get_tree().change_scene_to_file(RESULTS_SCREEN_SCENE)
+	
+	
 	

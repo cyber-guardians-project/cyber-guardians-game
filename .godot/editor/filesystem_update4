@@ -6,3 +6,12 @@ res://themes/checkbox.tres
 res://modules/select_character_area/select_character_area.gdshader
 res://modules/transition_screen/transition_screen.tscn
 res://modules/utils/level.gd
+res://modules/tile_map_layer/tile_map_layer.tscn
+res://modules/tile_map_layer/tile_map_layer.gd
+res://modules/game_over_screen/game_over_screen.tscn
+res://themes/title.tres
+res://themes/game_over.tres
+res://modules/results_screen/results_screen.tscn
+res://themes/result_label.tres
+res://themes/resutl_label_value.tres
+res://themes/sub_mesage_label.tres
