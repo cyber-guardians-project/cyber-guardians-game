@@ -79,15 +79,18 @@ func _on_select_option(option):
 		
 		
 	if not option['is_correct']:
-		lives -= 1
-		hud_instance.update_lives(lives)
+		if lives > 0:
+			lives -= 1
+			hud_instance.update_lives(lives)
+
 		
 		if lives <= 0:
 			lives = 0
-			
+			hud_instance.update_lives(lives)
+
 			await get_tree().create_timer(2.0).timeout
 			show_results_screen('¡Has Perdido!', false, '¡Intentalo De Nuevo!')
-			
+						
 		
 func _on_finish_question(question_point):
 	question_point.active = false
