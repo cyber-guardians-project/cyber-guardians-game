@@ -2,7 +2,7 @@ extends Node2D
 
 @export var level: int
 @export var lives: int = 3
-@export var time: int = 5
+@export var time: int = 60
 @export var score: int = 0
 @export var score_to_add: int = 100
 
