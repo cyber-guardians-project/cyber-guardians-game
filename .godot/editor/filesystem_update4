@@ -14,3 +14,8 @@ res://themes/title.tres
 res://modules/select_character/select_character.tscn
 res://modules/level_1/level_1.tscn
 res://modules/select_character/select_character.gd
+res://modules/transition_screen/transition_screen.tscn
+res://modules/transition_screen/transition_screen.gd
+res://modules/start_menu/start_menu.gd
+res://modules/utils/utils.gd
+res://modules/question_point/question_point.gd

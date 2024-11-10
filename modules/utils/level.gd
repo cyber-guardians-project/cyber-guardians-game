@@ -61,6 +61,7 @@ func init_questions():
 		question_point.connect('finish_question', _on_finish_question)
 		
 func _on_timeout():
+	await Utils.transition()
 	reset_level('¡Se acabó el tiempo! Intenta Nuevamente')
 
 func _on_select_option(option):
@@ -81,6 +82,8 @@ func _on_finish_question(question_point):
 	question_point.active = false
 	
 func reset_level(message: String) -> void:
+	await Utils.transition()
+
 	var dialog_instance = retry_dialog.instantiate()
 	
 	dialog_instance.text = message

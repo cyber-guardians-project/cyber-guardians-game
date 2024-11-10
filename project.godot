@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Utils="*res://modules/utils/utils.gd"
 State="*res://modules/utils/state.gd"
 StateManager="*res://modules/utils/state_manager.gd"
+TransitionScreen="*res://modules/transition_screen/transition_screen.tscn"
 
 [display]
 

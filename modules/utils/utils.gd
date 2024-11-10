@@ -43,3 +43,7 @@ func convertHexToVector(hexColor: String) -> Vector3:
 	var b = hexColor.substr(4,2).hex_to_int() / 255.0
 
 	return Vector3(r,g,b)
+
+func transition():
+	TransitionScreen.transition()
+	await TransitionScreen.transition_finished
