@@ -45,4 +45,5 @@ func clear_children():
 		
 	
 func _on_select_option(option):
+	option.disabled = true
 	select_option.emit(option)

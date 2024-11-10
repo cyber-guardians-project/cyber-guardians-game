@@ -83,7 +83,8 @@ func _on_select_option(option):
 		hud_instance.update_lives(lives)
 		
 		if lives <= 0:
-			#show_dialog('Intenta Nuevamente')
+			lives = 0
+			
 			await get_tree().create_timer(2.0).timeout
 			show_results_screen('¡Has Perdido!', false, '¡Intentalo De Nuevo!')
 			
