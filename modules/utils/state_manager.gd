@@ -50,16 +50,22 @@ func get_unlocked_levels() -> Array:
 	
 func get_character_variation() -> int:
 	return State.get_character_variant()
+	
+func get_current_level() -> int:
+	return State.get_current_level()
 
 
 func update_player_name(name: String) -> void:
 	State.set_player_name(name)
 
-func update_high_score(score: int) -> void:
-	State.set_high_score(score)
+func update_score(score: int) -> void:
+	State.set_score(score)
 
 func update_unlocked_levels(levels: Array) -> void:
 	State.set_unlocked_levels(levels)
 	
 func update_character_variation(variation: int) -> void:
 	State.set_character_variant(variation)
+	
+func update_current_level(level: int) -> void:
+	State.set_current_level(level)

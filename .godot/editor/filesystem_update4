@@ -31,3 +31,7 @@ res://modules/level_3/level_3.tscn
 res://modules/question_layer/question_layer.gd
 res://modules/checkbox/check_box.tscn
 res://modules/checkbox/check_box.gd
+res://modules/utils/state_manager.gd
+res://modules/utils/state.gd
+res://modules/hud/hud.tscn
+res://modules/hud/hud.gd

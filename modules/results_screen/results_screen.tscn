@@ -73,7 +73,7 @@ label_settings = ExtResource("4_tbxhs")
 
 [node name="Value" type="Label" parent="Background/ResultsContainer/LivesContainer"]
 layout_mode = 2
-text = "1"
+text = "0"
 label_settings = ExtResource("5_0dnnb")
 
 [node name="MessageContainer" type="VBoxContainer" parent="Background"]

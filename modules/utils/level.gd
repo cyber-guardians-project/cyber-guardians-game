@@ -23,6 +23,8 @@ var character_variation
 
 
 func _ready():
+	StateManager.load_game()
+	
 	get_character()
 
 	hud_instance = hud.instantiate()
@@ -34,6 +36,7 @@ func _ready():
 	init_questions()
 	add_child(hud_instance)
 	
+
 
 		
 func _process(delta: float):			
@@ -50,6 +53,11 @@ func init_timer():
 	hud_instance.connect('timer_timeout', _on_timeout)
 	
 func init_score():
+	var saved_score = StateManager.get_score()
+	
+	if saved_score:
+		score = saved_score
+	
 	hud_instance.score = score
 	
 func init_lives():
@@ -123,6 +131,9 @@ func show_results_screen(title: String, is_win: bool, message: String):
 	results_screen_instance.level_number = level
 	results_screen_instance.is_win = is_win
 	results_screen_instance.message_text = message
+	results_screen_instance.score = score
+	results_screen_instance.lives = lives
+	results_screen_instance.elapsed_time = hud_instance.get_elapsed_time()
 	
 	get_tree().root.add_child(results_screen_instance)
 	
@@ -130,6 +141,15 @@ func show_results_screen(title: String, is_win: bool, message: String):
 	
 	
 func _on_show_score():
+	var unlocked_levels = StateManager.get_unlocked_levels()
+	var next_level = level + 1
+	unlocked_levels.append(next_level)
+	
+	StateManager.update_score(score)
+	StateManager.update_unlocked_levels(unlocked_levels)
+	StateManager.update_current_level(level + 1)
+	StateManager.save_game()
+	
 	show_results_screen('Resultados Nivel ' + str(level), true, '!Felicidades ' + StateManager.get_player_name() + '!')
 	
 	

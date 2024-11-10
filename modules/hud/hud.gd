@@ -51,3 +51,6 @@ func update_score(new_score: int) -> void:
 func update_lives(new_lives: int) -> void:
 	lives = new_lives
 	lives_label.text = 'X ' + str(lives)
+	
+func get_elapsed_time():
+	return  total_time - timer.time_left

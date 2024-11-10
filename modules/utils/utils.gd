@@ -48,3 +48,12 @@ func convertHexToVector(hexColor: String) -> Vector3:
 func transition():
 	TransitionScreen.transition()
 	await TransitionScreen.transition_finished
+	
+func get_unlocked_levels(level: int):
+	var unlocked_levels: Array = []
+
+	for previous_level in range(level):
+		unlocked_levels.append(previous_level)
+		
+	print(unlocked_levels)
+	

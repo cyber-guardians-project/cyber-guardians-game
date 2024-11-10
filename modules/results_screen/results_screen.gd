@@ -4,11 +4,17 @@ extends CanvasLayer
 @export var message_text: String
 @export var is_win: bool
 @export var level_number: int = 2
+@export var score: int
+@export var elapsed_time: int
+@export var lives: int
 
 @onready var title: Label = $Background/Title
 @onready var message: Label = $Background/MessageContainer/Message
 @onready var sub_message: Label = $Background/MessageContainer/SubMessage
 @onready var coninue_button: Button = $Control/Continue
+@onready var score_value: Label = $Background/ResultsContainer/ScoreContainer/Value
+@onready var elapsed_time_value = $Background/ResultsContainer/ElapsedTimeContainer/Value
+@onready var lives_value = $Background/ResultsContainer/LivesContainer/Value
 
 const START_MENU_SCENE = "res://modules/start_menu/start_menu.tscn"
 
@@ -16,17 +22,26 @@ const START_MENU_SCENE = "res://modules/start_menu/start_menu.tscn"
 func _ready() -> void:
 	init_parameters()
 	
-	if not is_win: coninue_button.text = 'Reiniciar'
-	
-	if is_win and level_number == Utils.last_level:
-		coninue_button.text = 'Ver créditos'
-		
-		
 
 func init_parameters():
-	if title_text: title.text = title_text
-	if message_text: message.text = message_text
-
+	if title_text:
+		title.text = title_text
+		
+	if message_text:
+		message.text = message_text
+	
+	if not is_win:
+		coninue_button.text = "Reiniciar"
+	
+	if is_win and level_number == Utils.last_level:
+		coninue_button.text = "Ver créditos"
+		
+	score_value.text = str(score)
+	elapsed_time_value.text = str(elapsed_time)
+	lives_value.text = str(lives)
+	
+	print(lives_value.text, "lives")
+		
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
