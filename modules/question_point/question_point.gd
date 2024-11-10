@@ -5,6 +5,7 @@ signal question_entered(question_id)
 @export var level: int
 @export var number: int
 @export var active: bool = true
+@export var is_last: bool = false
 
 var question_layer = preload("res://modules/question_layer/question_layer.tscn")
 var dialog = preload("res://modules/dialog/dialog.tscn")
@@ -13,8 +14,13 @@ var question_layer_instance
 signal open_question(is_open: bool)
 signal select_option(option)
 signal finish_question
+signal show_score
 
 func _on_body_entered(body: Node2D) -> void:
+	if is_last:
+		show_score.emit()
+		return
+	
 	if active:
 		open_question.emit(true)
 		await Utils.transition()

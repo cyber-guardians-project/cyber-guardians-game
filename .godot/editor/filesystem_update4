@@ -15,3 +15,5 @@ res://modules/results_screen/results_screen.tscn
 res://themes/result_label.tres
 res://themes/resutl_label_value.tres
 res://themes/sub_mesage_label.tres
+res://modules/question_point/question_point.gd
+res://modules/results_screen/results_screen.gd

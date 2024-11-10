@@ -31,6 +31,7 @@ position = Vector2(168, 120)
 
 [node name="QuestionPoint_6" parent="Questions" instance=ExtResource("4_5kvp7")]
 position = Vector2(216, 120)
+is_last = true
 
 [node name="Player" parent="." instance=ExtResource("2_rvovw")]
 position = Vector2(7, 64)

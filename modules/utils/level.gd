@@ -61,6 +61,8 @@ func init_questions():
 		question_point.connect('open_question', _on_open_question)
 		question_point.connect('select_option', _on_select_option)
 		question_point.connect('finish_question', _on_finish_question)
+		question_point.connect('show_score', _on_show_score)
+
 		
 func _on_timeout():
 	show_dialog('¡Se acabó el tiempo!')
@@ -108,6 +110,9 @@ func show_results_screen():
 			child.queue_free()
 		
 	get_tree().change_scene_to_file(RESULTS_SCREEN_SCENE)
+	
+func _on_show_score():
+	show_results_screen()
 	
 	
 	
