@@ -3,19 +3,21 @@ extends Node
 var player_name: String = ''
 var score: int = 0
 var unlocked_levels: Array = []
-var character_variation: int = 1
+var character_variation: int = 0
 
 func to_dict() -> Dictionary:
 	return {
 		"player_name": player_name,
 		"score": score,
-		"unlocked_levels": unlocked_levels
+		"unlocked_levels": unlocked_levels,
+		"character_variation": character_variation
 	}
 
 func from_dict(data: Dictionary) -> void:
 	set_player_name(data.get("player_name", player_name))
 	set_high_score(data.get("score", score))
 	set_unlocked_levels(data.get("unlocked_levels", unlocked_levels))
+	set_character_variant(data.get('character_variation', character_variation))
 
 func get_player_name() -> String:
 	return player_name

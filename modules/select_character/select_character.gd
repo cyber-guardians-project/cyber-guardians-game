@@ -49,4 +49,6 @@ func update_characters_animations():
 
 func _on_button_pressed() -> void:
 	StateManager.update_character_variation(character_variaton_selected)
+	StateManager.save_game()
+	
 	get_tree().change_scene_to_file(level1_scene)

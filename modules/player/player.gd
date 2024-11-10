@@ -12,12 +12,12 @@ class_name Player
 var variations = {}
 
 func _ready():
-	if variation >= 1:
-		variations = Utils.get_player_variations()
-		set_color()
+	update_character_variation()
 		
 		
 func _physics_process(delta):
+	update_character_variation()
+	
 	if active:
 		move_player()
 		
@@ -46,6 +46,11 @@ func update_animation():
 		animated_sprite.play("idle")
 	else:
 		animated_sprite.play("walk")
+		
+func update_character_variation():
+	if variation >= 1:
+		variations = Utils.get_player_variations()
+		set_color()
 		
 func set_color():
 	var original_material = animated_sprite.material as ShaderMaterial

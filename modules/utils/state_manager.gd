@@ -10,6 +10,7 @@ func save_game() -> void:
 	print(State.to_dict())
 	var file := FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
 	if file:
+		print(State.to_dict())
 		var json_string: String = JSON.stringify(State.to_dict())
 		file.store_string(json_string)
 		file.close()
@@ -26,6 +27,7 @@ func load_game() -> void:
 
 			if typeof(data) == TYPE_DICTIONARY:
 				State.from_dict(data)
+				print(data)
 				print("Game data loaded successfully.")
 			else:
 				print("Failed to parse game data. Using default values.")

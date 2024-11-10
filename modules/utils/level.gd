@@ -19,9 +19,7 @@ var character_variation
 
 
 func _ready():
-	print(player.variation)
 	get_character()
-	print(player.variation)
 
 	hud_instance = hud.instantiate()
 	

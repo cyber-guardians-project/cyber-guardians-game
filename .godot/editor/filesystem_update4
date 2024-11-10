@@ -13,3 +13,4 @@ res://themes/line_gradient.tres
 res://themes/title.tres
 res://modules/select_character/select_character.tscn
 res://modules/level_1/level_1.tscn
+res://modules/select_character/select_character.gd
