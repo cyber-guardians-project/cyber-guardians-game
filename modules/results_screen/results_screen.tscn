@@ -8,7 +8,7 @@
 [ext_resource type="LabelSettings" uid="uid://bsw2b0ga6edph" path="res://themes/result_label.tres" id="4_tbxhs"]
 [ext_resource type="LabelSettings" uid="uid://dlbnl1cobwlae" path="res://themes/resutl_label_value.tres" id="5_0dnnb"]
 [ext_resource type="LabelSettings" uid="uid://b7pushxxpv4sb" path="res://themes/result_message.tres" id="7_5nkei"]
-[ext_resource type="Theme" uid="uid://oeqr8taxjal2" path="res://themes/button.tres" id="9_a17xf"]
+[ext_resource type="Theme" uid="uid://j5nmg25piqcf" path="res://themes/button.tres" id="9_a17xf"]
 
 [node name="ResultsScreen" type="CanvasLayer"]
 script = ExtResource("1_tgusi")

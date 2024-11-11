@@ -1,10 +1,10 @@
+ColorRect
 Control
 Button
 HBoxContainer
 VBoxContainer
 Label
 RichTextLabel
-ColorRect
 CanvasLayer
 AnimationPlayer
 Line2D

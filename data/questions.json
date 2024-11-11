@@ -162,7 +162,7 @@
 	  },
 	  {
 		"text": "Firewall",
-		"is_correct": true
+		"is_correct": false
 	  },
 	  {
 		"text": "Antivirus",
@@ -170,7 +170,7 @@
 	  },
 	  {
 		"text": "Ransomware",
-		"is_correct": false
+		"is_correct": true
 	  }
 	]
   },
@@ -178,16 +178,16 @@
 	"id": 8,
 	"level": 2,
 	"number": 3,
-	"category": "La prevención de malware",
 	"question": "¿Qué hace un troyano?",
+	"category": "La prevención de malware",
 	"options": [
 	  {
 		"text": "Se oculta dentro de programas legítimos para robar información",
-		"is_correct": true
+		"is_correct": false
 	  },
 	  {
 		"text": "Mejora la velocidad del dispositivo",
-		"is_correct": false
+		"is_correct": true
 	  },
 	  {
 		"text": "Destruye archivos del sistema operativo",

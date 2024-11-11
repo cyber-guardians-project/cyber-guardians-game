@@ -34,3 +34,4 @@ position = Vector2(88, 137)
 
 [node name="QuestionPoint_6" parent="Questions" instance=ExtResource("4_6qwkd")]
 position = Vector2(200, 154)
+is_last = true

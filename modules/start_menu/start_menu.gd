@@ -4,6 +4,9 @@ const SELECT_CHARACTER_SCENE = "res://modules/select_character/select_character.
 
 
 func _on_new_pressed():
+	StateManager.update_score(0)
+	StateManager.save_game()
+	
 	await Utils.transition()
 	get_tree().change_scene_to_file(SELECT_CHARACTER_SCENE)
 
