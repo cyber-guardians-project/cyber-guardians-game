@@ -183,11 +183,11 @@
 	"options": [
 	  {
 		"text": "Se oculta dentro de programas legítimos para robar información",
-		"is_correct": false
+		"is_correct": true
 	  },
 	  {
 		"text": "Mejora la velocidad del dispositivo",
-		"is_correct": true
+		"is_correct": false
 	  },
 	  {
 		"text": "Destruye archivos del sistema operativo",
