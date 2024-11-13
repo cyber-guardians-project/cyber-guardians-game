@@ -1,4 +1,4 @@
-[
+ [
   {
 	"id": 1,
 	"level": 1,
@@ -388,11 +388,11 @@
 	  },
 	  {
 		"text": "Software especializado en pruebas de penetración",
-		"is_correct": false
+		"is_correct": true
 	  },
 	  {
 		"text": "Navegadores web",
-		"is_correct": true
+		"is_correct": false
 	  },
 	  {
 		"text": "Herramientas para gestión de contraseñas",
@@ -433,7 +433,7 @@
 	"question": "¿Cuál de los siguientes datos es más utilizado en el robo de identidad?",
 	"options": [
 	  {
-		"text": "Número de teléfono",
+		"text": "Número de Seguro Social",
 		"is_correct": true
 	  },
 	  {
@@ -441,7 +441,7 @@
 		"is_correct": false
 	  },
 	  {
-		"text": "Número de Seguro Social",
+		"text": "Número de teléfono",
 		"is_correct": false
 	  },
 	  {
@@ -483,8 +483,8 @@
 	"question": "¿Qué tipo de malware se puede distribuir a través del malvertising?",
 	"options": [
 	  {
-		"text": "Ransomware, spyware y adware",
-		"is_correct": true
+		"text": "Ninguno, ya que el malvertising es seguro",
+		"is_correct": false
 	  },
 	  {
 		"text": "Solo adware",
@@ -495,8 +495,8 @@
 		"is_correct": false
 	  },
 	  {
-		"text": "Ninguno, ya que el malvertising es seguro",
-		"is_correct": false
+		"text": "Ransomware, spyware y adware",
+		"is_correct": true
 	  }
 	]
   },
@@ -508,11 +508,11 @@
 	"question": "¿Cuál es un método común utilizado por los ciberdelincuentes para implementar publicidad maliciosa?",
 	"options": [
 	  {
-		"text": "Creación de cuentas de anunciantes falsas",
+		"text": "Publicación de anuncios en redes sociales sin costo",
 		"is_correct": false
 	  },
 	  {
-		"text": "Publicación de anuncios en redes sociales sin costo",
+		"text": "Creación de cuentas de anunciantes falsas",
 		"is_correct": true
 	  },
 	  {
@@ -559,7 +559,7 @@
 	"options": [
 	  {
 		"text": "Realización de copias de seguridad periódicas",
-		"is_correct": true
+		"is_correct": false
 	  },
 	  {
 		"text": "Implementación de firewalls robustos",
@@ -567,7 +567,7 @@
 	  },
 	  {
 		"text": "Uso de malware para acceder y transferir datos",
-		"is_correct": false
+		"is_correct": true
 	  },
 	  {
 		"text": "Uso de contraseñas fuertes",
@@ -588,7 +588,7 @@
 	  },
 	  {
 		"text": "FTP",
-		"is_correct": true
+		"is_correct": false
 	  },
 	  {
 		"text": "HTTP",
@@ -596,7 +596,7 @@
 	  },
 	  {
 		"text": "HTTPS",
-		"is_correct": false
+		"is_correct": true
 	  }
 	]
   },
@@ -634,7 +634,7 @@
 	"options": [
 	  {
 		"text": "Una red que utiliza cifrado para proteger la información",
-		"is_correct": false
+		"is_correct": true
 	  },
 	  {
 		"text": "Una red que solo permite el acceso a dispositivos móviles",
@@ -642,7 +642,7 @@
 	  },
 	  {
 		"text": "Una red pública accesible a todos",
-		"is_correct": true
+		"is_correct": false
 	  },
 	  {
 		"text": "Una red que no requiere contraseña",
