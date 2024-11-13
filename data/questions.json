@@ -41,11 +41,12 @@
 	  },
 	  {
 		"text": "Un manual sobre cómo gestionar la gestión de usuario",
-		"is_correct": true
+		"is_correct": false
 	  },
 	  {
 		"text": "Un conjunto de reglas que definen cómo deben ser las contraseñas en una organización",
-		"is_correct": false
+		"is_correct": true
+		
 	  }
 	]
   },
@@ -58,7 +59,7 @@
 	"options": [
 	  {
 		"text": "Autorización",
-		"is_correct": true
+		"is_correct": false
 	  },
 	  {
 		"text": "Auditoría",
@@ -66,7 +67,7 @@
 	  },
 	  {
 		"text": "Autenticación",
-		"is_correct": false
+		"is_correct": true
 	  },
 	  {
 		"text": "Asignación",
@@ -83,11 +84,11 @@
 	"options": [
 	  {
 		"text": "Phishing a través de mensajes SMS",
-		"is_correct": false
+		"is_correct": true
 	  },
 	  {
 		"text": "phishing a través de correos electrónicos",
-		"is_correct": true
+		"is_correct": false
 	  },
 	  {
 		"text": "Phishing a través de llamadas telefónicas",
@@ -157,8 +158,8 @@
 	"question": "¿Cuál de los siguientes es un tipo común de malware?",
 	"options": [
 	  {
-		"text": "Sistema operativo",
-		"is_correct": false
+		"text": "Ransomware",
+		"is_correct": true
 	  },
 	  {
 		"text": "Firewall",
@@ -169,8 +170,8 @@
 		"is_correct": false
 	  },
 	  {
-		"text": "Ransomware",
-		"is_correct": true
+		"text": "Sistema operativo",
+		"is_correct": false
 	  }
 	]
   },
@@ -232,16 +233,16 @@
 	"question": "¿Qué algoritmo se utiliza combinado para la encriptación simétrica?",
 	"options": [
 	  {
-		"text": "AES",
+		"text": "DSA",
 		"is_correct": false
 	  },
 	  {
 		"text": "ECC",
-		"is_correct": true
+		"is_correct": false
 	  },
 	  {
-		"text": "DSA",
-		"is_correct": false
+		"text": "AES",
+		"is_correct": true
 	  },
 	  {
 		"text": "RSA",
@@ -291,11 +292,11 @@
 	  },
 	  {
 		"text": "Un tipo de malware utilizado para robar información personal",
-		"is_correct": true
+		"is_correct": false
 	  },
 	  {
 		"text": "Archivos temporales que almacenan información sobre las preferencias del usuario en un sitio web",
-		"is_correct": false
+		"is_correct": true
 	  }
 	]
   },
@@ -307,16 +308,16 @@
 	"question": "¿Cuál es el principal objetivo de un ataque de inyección SQL?",
 	"options": [
 	  {
-		"text": "Cambiar la apariencia del sitio web",
-		"is_correct": false
+		"text": "Acceder o modificar datos sensibles en una base de datos",
+		"is_correct": true
 	  },
 	  {
 		"text": "Mejorar el rendimiento del servidor",
 		"is_correct": false
 	  },
 	  {
-		"text": "Acceder o modificar datos sensibles en una base de datos",
-		"is_correct": true
+		"text": "Cambiar la apariencia del sitio web",
+		"is_correct": false
 	  },
 	  {
 		"text": "Aumentar la velocidad de carga del sitio web",
@@ -333,7 +334,7 @@
 	"options": [
 	  {
 		"text": "Permitir todas las entradas del usuario sin restricciones",
-		"is_correct": true
+		"is_correct": false
 	  },
 	  {
 		"text": "Usar solo consultas dinámicas sin validación",
@@ -345,7 +346,7 @@
 	  },
 	  {
 		"text": "Implementar controles de acceso y autenticación robustos",
-		"is_correct": false
+		"is_correct": true
 	  }
 	]
   },
