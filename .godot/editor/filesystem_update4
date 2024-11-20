@@ -1,4 +1,3 @@
-res://modules/level_4/level_4.tscn
 res://themes/label.tres
 res://themes/game_over.tres
 res://themes/sub_mesage_label.tres
@@ -9,9 +8,11 @@ res://themes/button.tres
 res://themes/dialog.tres
 res://modules/player/player.gdshader
 res://themes/checkbox.tres
-res://themes/line_gradient.tres
-res://themes/title.tres
 res://modules/select_character_area/select_character_area.gdshader
-res://modules/level_5/level_5.tscn
+res://modules/login/login.tscn
+res://modules/http/http.tscn
+res://modules/start_menu/start_menu.tscn
+res://themes/normal_font.tres
+res://themes/title.tres
 res://modules/results_screen/results_screen.tscn
-res://modules/select_character/select_character.tscn
+res://modules/level_1/level_1.tscn

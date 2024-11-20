@@ -1,3 +1,5 @@
+res://modules/login
+res://modules/http
 D:/Godot/projects/cyber-guardians-game/build/web
 D:/Godot/projects/cyber-guardians-game
 res://themes
@@ -18,5 +20,3 @@ res://modules/level_3
 res://assets/textures/maps
 res://modules/level_2
 res://modules/question_point
-res://modules/tile_map_layer
-res://modules/level_1
