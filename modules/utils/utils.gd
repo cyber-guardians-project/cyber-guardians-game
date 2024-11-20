@@ -4,6 +4,7 @@ var questions_data_path = 'res://data/questions.json'
 var player_variations_path = 'res://data/player_varations.json'
 var game_state_path = 'res://data/game_state.json'
 var last_level: int = 5
+var api_url: String = 'http://127.0.0.1:8000'
 
 
 func get_question_number(question_name: String) -> int:

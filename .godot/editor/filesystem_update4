@@ -16,3 +16,6 @@ res://themes/normal_font.tres
 res://themes/title.tres
 res://modules/results_screen/results_screen.tscn
 res://modules/level_1/level_1.tscn
+res://modules/login/login.gd
+res://modules/utils/utils.gd
+res://modules/http/http.gd
