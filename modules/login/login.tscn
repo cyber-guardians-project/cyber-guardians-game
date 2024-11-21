@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://csyfhkjha6t36"]
+[gd_scene load_steps=5 format=3 uid="uid://csyfhkjha6t36"]
 
 [ext_resource type="Script" path="res://modules/login/login.gd" id="1_k0avt"]
 [ext_resource type="LabelSettings" uid="uid://cn1sxou71yp4n" path="res://themes/title.tres" id="1_nvu21"]
 [ext_resource type="Texture2D" uid="uid://dtnvrnhf1w62f" path="res://assets/textures/screen/logo.png" id="1_tar46"]
+[ext_resource type="PackedScene" uid="uid://c3gvwja61h68n" path="res://modules/http/http.tscn" id="4_jy780"]
 
 [node name="Login" type="Control"]
 layout_mode = 3
@@ -115,3 +116,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 5
 text = "¿Olvidaste tú contraseña?"
 flat = true
+
+[node name="Http" parent="." instance=ExtResource("4_jy780")]
+endpoint = "/auth/sign-in"
+http_method = 2

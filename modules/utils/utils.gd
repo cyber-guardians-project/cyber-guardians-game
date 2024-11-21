@@ -4,6 +4,7 @@ var questions_data_path = 'res://data/questions.json'
 var player_variations_path = 'res://data/player_varations.json'
 var game_state_path = 'res://data/game_state.json'
 var last_level: int = 5
+var dialog = preload("res://modules/dialog/dialog.tscn")
 var api_url: String = 'http://127.0.0.1:8000'
 
 
@@ -58,3 +59,8 @@ func get_unlocked_levels(level: int):
 		
 	print(unlocked_levels)
 	
+func show_dialog(text: String):
+	var dialog = dialog.instantiate()
+	dialog.text = text
+	
+	add_child(dialog)
