@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://dddiyjomd5iuu"]
+[gd_scene load_steps=6 format=4 uid="uid://dddiyjomd5iuu"]
 
 [ext_resource type="Script" path="res://modules/utils/level.gd" id="1_llb41"]
 [ext_resource type="PackedScene" uid="uid://cfrafbgupjqn6" path="res://modules/tile_map_layer/tile_map_layer.tscn" id="2_lhn1p"]
 [ext_resource type="PackedScene" uid="uid://d1j01lpi8ckyq" path="res://modules/player/player.tscn" id="2_rvovw"]
 [ext_resource type="PackedScene" uid="uid://dsfdpei107ma6" path="res://modules/question_point/question_point.tscn" id="4_5kvp7"]
+[ext_resource type="AudioStream" uid="uid://c5k85mn6s8vb0" path="res://assets/audio/level1.mp3" id="5_ibevj"]
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_llb41")
@@ -35,3 +36,7 @@ is_last = true
 
 [node name="Player" parent="." instance=ExtResource("2_rvovw")]
 position = Vector2(7, 64)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ibevj")
+autoplay = true

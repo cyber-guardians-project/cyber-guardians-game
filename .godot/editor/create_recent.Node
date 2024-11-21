@@ -1,3 +1,6 @@
+AudioStreamPlayer2D
+AudioStreamPlayer
+Node
 HTTPRequest
 Sprite2D
 Label
@@ -8,7 +11,4 @@ HBoxContainer
 Container
 LineEdit
 ColorRect
-Node
 RichTextLabel
-CanvasLayer
-AnimationPlayer
