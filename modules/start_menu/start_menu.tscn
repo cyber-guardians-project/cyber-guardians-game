@@ -21,6 +21,7 @@ scale = Vector2(0.247917, 0.209821)
 texture = ExtResource("4_k003x")
 
 [node name="Step1" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -78,7 +79,6 @@ text = "Continuar como invitado
 flat = true
 
 [node name="Step2" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -137,6 +137,35 @@ text = "Salir
 "
 flat = true
 
+[node name="Logout" type="Button" parent="."]
+offset_left = 199.0
+offset_top = 143.0
+offset_right = 240.0
+offset_bottom = 159.0
+theme_override_colors/font_hover_color = Color(0.760784, 0.364706, 0.364706, 1)
+theme_override_colors/font_pressed_color = Color(0.760784, 0.364706, 0.364706, 1)
+theme_override_colors/font_focus_color = Color(0.760784, 0.364706, 0.364706, 1)
+theme_override_colors/font_color = Color(0.760784, 0.364706, 0.364706, 1)
+theme_override_font_sizes/font_size = 5
+text = "Cerrar sesión
+"
+flat = true
+
+[node name="GoLogin" type="Button" parent="."]
+visible = false
+offset_left = 199.0
+offset_top = 143.0
+offset_right = 240.0
+offset_bottom = 159.0
+theme_override_colors/font_hover_color = Color(0.494118, 0.811765, 0.541176, 1)
+theme_override_colors/font_pressed_color = Color(0.494118, 0.811765, 0.541176, 1)
+theme_override_colors/font_focus_color = Color(0.494118, 0.811765, 0.541176, 1)
+theme_override_colors/font_color = Color(0.494118, 0.811765, 0.541176, 1)
+theme_override_font_sizes/font_size = 5
+text = "Iniciar sesión
+"
+flat = true
+
 [connection signal="pressed" from="Step1/HBoxContainer/Login" to="." method="_on_login_pressed"]
 [connection signal="pressed" from="Step1/HBoxContainer/Register" to="." method="_on_register_pressed"]
 [connection signal="pressed" from="Step1/HBoxContainer/guest" to="." method="_on_guest_pressed"]
@@ -144,3 +173,5 @@ flat = true
 [connection signal="pressed" from="Step2/HBoxContainer/Learn" to="." method="_on_learn_pressed"]
 [connection signal="pressed" from="Step2/HBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Step2/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Logout" to="." method="_on_logout_pressed"]
+[connection signal="pressed" from="GoLogin" to="." method="_on_go_login_pressed"]

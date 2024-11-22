@@ -2,6 +2,8 @@ extends Control
 
 @onready var step1: Control = $Step1
 @onready var step2: Control = $Step2
+@onready var go_login: Button = $GoLogin
+@onready var logout: Button = $Logout
 
 var isStep1: bool = true
 
@@ -11,13 +13,16 @@ const REGISTER_SCENE = "res://modules/register/register.tscn"
 
 
 func _ready() -> void:
-	if StateManager.get_auth_token() != '':
+	if is_user_authenticated():
 		isStep1 = false
 
 
 func _process(delta: float) -> void:
 	step1.visible = isStep1
 	step2.visible = not isStep1
+	
+	logout.visible = not isStep1 and is_user_authenticated()
+	go_login.visible = not isStep1 and not is_user_authenticated()
 
 func _on_new_pressed():
 	StateManager.update_score(0)
@@ -49,3 +54,16 @@ func _on_guest_pressed() -> void:
 func _on_register_pressed() -> void:
 	await Utils.transition()
 	get_tree().change_scene_to_file(REGISTER_SCENE)
+	
+func is_user_authenticated():
+	return StateManager.get_auth_token() != ''
+
+
+func _on_logout_pressed() -> void:
+	StateManager.update_auth_token('')
+	StateManager.save_game()
+	isStep1 = true
+
+func _on_go_login_pressed() -> void:
+	await Utils.transition()
+	get_tree().change_scene_to_file(LOGIN_SCENE)

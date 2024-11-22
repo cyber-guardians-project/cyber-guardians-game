@@ -21,3 +21,4 @@ res://modules/register/register.gd
 res://modules/login/login.gd
 res://modules/utils/state.gd
 res://modules/utils/state_manager.gd
+res://modules/level_1/level_1.tscn

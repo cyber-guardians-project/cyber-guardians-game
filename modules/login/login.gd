@@ -54,7 +54,6 @@ func success_login(response_json) -> void:
 	StateManager.update_auth_token(auth_token)
 	StateManager.save_game()
 	
-	await Utils.transition()
 	get_tree().change_scene_to_file(START_SCREEN)
 	
 func _on_register_pressed() -> void:
