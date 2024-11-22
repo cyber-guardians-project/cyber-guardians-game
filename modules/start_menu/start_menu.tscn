@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://ban8vqr32420f"]
+[gd_scene load_steps=6 format=3 uid="uid://ban8vqr32420f"]
 
-[ext_resource type="Texture2D" uid="uid://dtnvrnhf1w62f" path="res://assets/textures/screen/logo.png" id="1_o48fr"]
+[ext_resource type="Shader" path="res://modules/start_menu/start_menu.gdshader" id="1_ncstg"]
 [ext_resource type="Script" path="res://modules/start_menu/start_menu.gd" id="1_qan61"]
+[ext_resource type="Texture2D" uid="uid://dx2tkr1bbfa6f" path="res://assets/textures/screen/logo.png" id="4_k003x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hatcv"]
+shader = ExtResource("1_ncstg")
+
+[sub_resource type="FontVariation" id="FontVariation_gb46w"]
 
 [node name="StartMenu" type="ColorRect"]
+material = SubResource("ShaderMaterial_hatcv")
 offset_right = 240.0
 offset_bottom = 159.0
 color = Color(0.0313726, 0.172549, 0.313726, 1)
@@ -11,9 +18,9 @@ script = ExtResource("1_qan61")
 
 [node name="Logo" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(120, 24.5)
+position = Vector2(118, 28)
 scale = Vector2(0.247917, 0.209821)
-texture = ExtResource("1_o48fr")
+texture = ExtResource("4_k003x")
 
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -34,18 +41,9 @@ layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.4941, 0.81, 0.541485, 1)
 theme_override_colors/font_pressed_color = Color(0.494118, 0.811765, 0.541176, 1)
 theme_override_colors/font_focus_color = Color(0.555321, 0.564909, 0.449898, 1)
+theme_override_fonts/font = SubResource("FontVariation_gb46w")
 theme_override_font_sizes/font_size = 8
-text = "Nueva Partida
-"
-flat = true
-
-[node name="Continue" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.494118, 0.811765, 0.541176, 1)
-theme_override_colors/font_pressed_color = Color(0.320388, 0.276468, 0.316172, 1)
-theme_override_colors/font_focus_color = Color(0, 0.39123, 3.85046e-07, 1)
-theme_override_font_sizes/font_size = 8
-text = "Continuar
+text = "Iniciar Juego
 "
 flat = true
 
@@ -56,6 +54,16 @@ theme_override_colors/font_pressed_color = Color(0.560784, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.43305, 0.0415662, 0.21078, 1)
 theme_override_font_sizes/font_size = 8
 text = "Aprender"
+flat = true
+
+[node name="Continue" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.494118, 0.811765, 0.541176, 1)
+theme_override_colors/font_pressed_color = Color(0.320388, 0.276468, 0.316172, 1)
+theme_override_colors/font_focus_color = Color(0, 0.39123, 3.85046e-07, 1)
+theme_override_font_sizes/font_size = 8
+text = "Créditos
+"
 flat = true
 
 [node name="Exit" type="Button" parent="HBoxContainer"]
@@ -69,6 +77,6 @@ text = "Salir
 flat = true
 
 [connection signal="pressed" from="HBoxContainer/New" to="." method="_on_new_pressed"]
-[connection signal="pressed" from="HBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="HBoxContainer/Learn" to="." method="_on_learn_pressed"]
+[connection signal="pressed" from="HBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]

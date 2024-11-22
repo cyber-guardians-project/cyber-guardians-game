@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://csyfhkjha6t36"]
+[gd_scene load_steps=7 format=3 uid="uid://csyfhkjha6t36"]
 
 [ext_resource type="Script" path="res://modules/login/login.gd" id="1_k0avt"]
 [ext_resource type="LabelSettings" uid="uid://cn1sxou71yp4n" path="res://themes/title.tres" id="1_nvu21"]
-[ext_resource type="Texture2D" uid="uid://dtnvrnhf1w62f" path="res://assets/textures/screen/logo.png" id="1_tar46"]
+[ext_resource type="Shader" path="res://modules/login/login.gdshader" id="2_2sspy"]
+[ext_resource type="Texture2D" uid="uid://dx2tkr1bbfa6f" path="res://assets/textures/screen/logo.png" id="3_lwk67"]
 [ext_resource type="PackedScene" uid="uid://c3gvwja61h68n" path="res://modules/http/http.tscn" id="4_jy780"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nnvmr"]
+shader = ExtResource("2_2sspy")
 
 [node name="Login" type="Control"]
 layout_mode = 3
@@ -15,6 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_k0avt")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_nnvmr")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +31,7 @@ color = Color(0.0313726, 0.172549, 0.313726, 1)
 [node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(119.5, 24.4375)
 scale = Vector2(0.248958, 0.219308)
-texture = ExtResource("1_tar46")
+texture = ExtResource("3_lwk67")
 
 [node name="Label" type="Label" parent="."]
 visible = false
