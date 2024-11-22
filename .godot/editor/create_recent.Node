@@ -1,3 +1,4 @@
+Control
 AudioStreamPlayer2D
 AudioStreamPlayer
 Node
@@ -6,7 +7,6 @@ Sprite2D
 Label
 Button
 VBoxContainer
-Control
 HBoxContainer
 Container
 LineEdit

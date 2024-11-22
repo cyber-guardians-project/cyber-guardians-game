@@ -6,10 +6,11 @@ extends Control
 @onready var http: HTTPRequest = $Http
 
 var isPasswordSetted
-var isEmailSetted	
+var isEmailSetted
 
-const REGISTER_SCENE = "res://modules/register/register.tscn"
+const LOGIN_SCENE = "res://modules/login/login.tscn"
 const START_SCREEN = "res://modules/start_menu/start_menu.tscn"
+
 
 func _ready() -> void:
 	login_button.pressed.connect(_on_login_button_pressed)
@@ -45,9 +46,9 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 	Utils.show_dialog(dialog_text)
 
 
-func _on_register_pressed() -> void:
+func _on_login_pressed() -> void:
 	await Utils.transition()
-	get_tree().change_scene_to_file(REGISTER_SCENE)
+	get_tree().change_scene_to_file(LOGIN_SCENE)
 
 
 func _on_back_pressed() -> void:

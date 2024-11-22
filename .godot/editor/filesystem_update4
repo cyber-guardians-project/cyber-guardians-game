@@ -15,3 +15,7 @@ res://modules/player/player.tscn
 res://modules/login/login.tscn
 res://themes/title.tres
 res://modules/login/login.gdshader
+res://modules/start_menu/start_menu.gd
+res://modules/register/register.tscn
+res://modules/register/register.gd
+res://modules/login/login.gd
