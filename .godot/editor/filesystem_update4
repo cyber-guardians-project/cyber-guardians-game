@@ -19,3 +19,5 @@ res://modules/start_menu/start_menu.gd
 res://modules/register/register.tscn
 res://modules/register/register.gd
 res://modules/login/login.gd
+res://modules/utils/state.gd
+res://modules/utils/state_manager.gd

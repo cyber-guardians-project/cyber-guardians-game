@@ -43,8 +43,20 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		dialog_text = 'Ha ocurrido un error, vuelve a intentarlo'
 	
 	Utils.show_dialog(dialog_text)
+	
+	if response_code == HTTPClient.RESPONSE_OK:
+		success_login(response_json)
+	
 
-
+func success_login(response_json) -> void:
+	var auth_token = response_json.data.auth_token
+	
+	StateManager.update_auth_token(auth_token)
+	StateManager.save_game()
+	
+	await Utils.transition()
+	get_tree().change_scene_to_file(START_SCREEN)
+	
 func _on_register_pressed() -> void:
 	await Utils.transition()
 	get_tree().change_scene_to_file(REGISTER_SCENE)

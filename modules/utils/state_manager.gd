@@ -53,6 +53,9 @@ func get_character_variation() -> int:
 	
 func get_current_level() -> int:
 	return State.get_current_level()
+	
+func get_auth_token() -> String:
+	return State.get_auth_token()
 
 
 func update_player_name(name: String) -> void:
@@ -69,3 +72,6 @@ func update_character_variation(variation: int) -> void:
 	
 func update_current_level(level: int) -> void:
 	State.set_current_level(level)
+	
+func update_auth_token(token: String) -> void:
+	State.set_auth_token(token)

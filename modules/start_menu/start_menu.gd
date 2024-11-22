@@ -9,6 +9,12 @@ const SELECT_CHARACTER_SCENE = "res://modules/select_character/select_character.
 const LOGIN_SCENE = "res://modules/login/login.tscn"
 const REGISTER_SCENE = "res://modules/register/register.tscn"
 
+
+func _ready() -> void:
+	if StateManager.get_auth_token() != '':
+		isStep1 = false
+
+
 func _process(delta: float) -> void:
 	step1.visible = isStep1
 	step2.visible = not isStep1

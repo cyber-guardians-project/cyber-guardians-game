@@ -5,6 +5,7 @@ var score: int = 0
 var unlocked_levels: Array = [1]
 var character_variation: int = 0
 var current_level: int = 1
+var auth_token: String = ''
 
 func to_dict() -> Dictionary:
 	return {
@@ -12,7 +13,8 @@ func to_dict() -> Dictionary:
 		"score": score,
 		"unlocked_levels": unlocked_levels,
 		"character_variation": character_variation,
-		"current_level": current_level
+		"current_level": current_level,
+		"auth_token": auth_token
 	}
 
 func from_dict(data: Dictionary) -> void:
@@ -21,6 +23,7 @@ func from_dict(data: Dictionary) -> void:
 	set_unlocked_levels(data.get("unlocked_levels", unlocked_levels))
 	set_character_variant(data.get('character_variation', character_variation))
 	set_current_level(data.get('current_level', current_level))
+	set_auth_token(data.get('auth_token', auth_token))
 
 func get_player_name() -> String:
 	return player_name
@@ -36,7 +39,9 @@ func get_character_variant() -> int:
 	
 func get_current_level() -> int:
 	return current_level
-
+	
+func get_auth_token() -> String:
+	return auth_token
 
 func set_player_name(value: String) -> void:
 	player_name = value
@@ -54,3 +59,6 @@ func set_character_variant(variation: int) -> void:
 	
 func set_current_level(level: int) -> void:
 	current_level = level
+	
+func set_auth_token(token: String) -> void:
+	auth_token = token
