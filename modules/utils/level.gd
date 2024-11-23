@@ -31,8 +31,11 @@ func _ready():
 	http_instance.request_completed.connect(_on_request_completed)
 	add_child(http_instance)
 	
-	if not is_current_game():
+	if is_empty_game():
 		create_game()
+		
+	if not is_empty_game():
+		print('hola')
 	
 	
 	init_timer()
@@ -139,7 +142,6 @@ func show_results_screen(title: String, is_win: bool, message: String):
 	results_screen_instance.elapsed_time = hud_instance.get_elapsed_time()
 	
 	get_tree().root.add_child(results_screen_instance)
-	
 	queue_free()
 	
 	
@@ -152,7 +154,8 @@ func _on_show_score():
 	StateManager.update_unlocked_levels(unlocked_levels)
 	StateManager.save_game()
 	
-	show_results_screen('Resultados Nivel ' + str(level), true, '!Felicidades ' + StateManager.user.user_name + '!')
+	finish_level()
+	show_results_screen('Resultados Nivel ' + str(level), true, '!Felicidades ' + StateManager.get_user().user_name + '!')
 	
 	
 func save_level():
@@ -163,15 +166,35 @@ func create_game():
 		"score": 0,
 		"character_variation": character_variation,
 		"current_level": 1,
-		"levels": {
+		"levels": [{
 			"level": 1,
 			"score": 0,
 			"elapsed_time": 0
-		}
+		}]
 	}
 	
 	make_http_request(HTTPClient.Method.METHOD_POST, '/games', game_data)
 	
+func finish_level(is_last: bool = false):
+	var game_data = StateManager.get_game()
+	var current_level = game_data.current_level + 1 if not is_last else game_data.current_level
+	var current_game_level = game_data.levels.filter(func(current_level): return current_level.level == level)[0]
+
+	game_data.current_level = current_level
+	game_data.score = get_total_score()
+	
+	var level_data =  {
+			"level": current_level ,
+			"score": score,
+			"elapsed_time": get_elapsed_time(),
+			"lives": lives
+		}
+	
+		
+	game_data.levels.append(level_data)
+	
+	make_http_request(HTTPClient.Method.METHOD_PUT, '/games/' + str(game_data.id), game_data)
+
 	
 	
 func make_http_request(method: HTTPClient.Method, endpoint: String, body: Dictionary) -> void:
@@ -182,8 +205,8 @@ func make_http_request(method: HTTPClient.Method, endpoint: String, body: Dictio
 	http_instance.make_request(body, headers)
 	
 	
-func is_current_game():
-	return len(StateManager.get_game()) > 0
+func is_empty_game():
+	return len(StateManager.get_game()) == 0
 	
 func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	var response_string = body.get_string_from_utf8()
@@ -192,5 +215,18 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 	if response_code != HTTPClient.RESPONSE_OK and response_code != HTTPClient.RESPONSE_CREATED:
 		Utils.show_dialog('Ocurrió un error al guardar la partida')
 	
-	print(response_json)
+		
+	var game = response_json.data
+	StateManager.update_game(game)
 	
+	
+func get_elapsed_time() -> float:
+	return time - hud_instance.timer.time_left
+
+func get_total_score():
+	var total_score = 0
+	
+	for level in StateManager.get_game():
+		total_score += level.get("score", 0)
+		
+	return total_score
