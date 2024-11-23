@@ -38,9 +38,6 @@ func load_game() -> void:
 
 func get_state() -> Dictionary:
 	return State.to_dict()
-	
-func get_player_name() -> String:
-	return State.get_player_name()
 
 func get_score() -> int:
 	return State.get_score()
@@ -59,10 +56,10 @@ func get_auth_token() -> String:
 	
 func get_user() -> Dictionary:
 	return State.get_user()
+	
+func get_games() -> Array:
+	return State.get_games()
 
-
-func update_player_name(name: String) -> void:
-	State.set_player_name(name)
 
 func update_score(score: int) -> void:
 	State.set_score(score)
@@ -78,7 +75,9 @@ func update_current_level(level: int) -> void:
 	
 func update_auth_token(token: String) -> void:
 	State.set_auth_token(token)
-	
 		
 func update_user(user: Dictionary) -> void:
 	State.set_user(user)
+	
+func update_games(games: Array) -> void:
+	State.set_games(games)

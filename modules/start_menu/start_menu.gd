@@ -4,6 +4,7 @@ extends Control
 @onready var step2: Control = $Step2
 @onready var go_login: Button = $GoLogin
 @onready var logout: Button = $Logout
+@onready var get_games_request: HTTPRequest = $GetGamesRequest
 
 var isStep1: bool = true
 
@@ -14,9 +15,10 @@ const REGISTER_SCENE = "res://modules/register/register.tscn"
 
 func _ready() -> void:
 	if is_user_authenticated():
+		get_games_request.request_completed.connect(_on_get_games_request_request_completed)
 		isStep1 = false
-
-
+		get_games()
+		
 func _process(delta: float) -> void:
 	step1.visible = isStep1
 	step2.visible = not isStep1
@@ -68,3 +70,16 @@ func _on_logout_pressed() -> void:
 func _on_go_login_pressed() -> void:
 	await Utils.transition()
 	get_tree().change_scene_to_file(LOGIN_SCENE)
+	
+func get_games():
+	var headers = ['Authorization: Bearer ' + StateManager.get_auth_token()]
+	get_games_request.make_request({}, headers)
+
+
+func _on_get_games_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+	var response_string = body.get_string_from_utf8()
+	var response_json = JSON.parse_string(response_string)
+	var games = response_json.data
+	
+	StateManager.update_games(games)
+	StateManager.save_game()

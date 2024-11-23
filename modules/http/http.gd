@@ -8,12 +8,12 @@ extends HTTPRequest
 func _ready() -> void:
 	request_completed.connect(_on_request_completed)
 	
-func make_request(body: Dictionary):
+func make_request(body: Dictionary = {}, request_headers: Array = headers):
 	print('making request')
 	var uri: String = Utils.api_url + endpoint
 	var data = JSON.stringify(body)
 	
-	request(uri, headers, http_method, data)
+	request(uri, request_headers, http_method, data)
 
 func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	pass

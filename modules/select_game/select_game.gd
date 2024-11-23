@@ -2,15 +2,20 @@ extends Control
 
 const START_SCREEN = "res://modules/start_menu/start_menu.tscn"
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var games = StateManager.get_games()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file(START_SCREEN)
+
+
+func _on_game_1_toggled(toggled_on: bool) -> void:
+	print('hola')
+
+
+func _on_game_1_button_up() -> void:
+	print('hola')

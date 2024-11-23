@@ -27,3 +27,5 @@ res://modules/select_game/select_game.gdshader
 res://modules/credits/credits.gdshader
 res://themes/normal_font.tres
 res://modules/select_game/select_game.gd
+res://modules/http/http.tscn
+res://modules/http/http.gd

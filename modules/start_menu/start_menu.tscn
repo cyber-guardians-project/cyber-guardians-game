@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ban8vqr32420f"]
+[gd_scene load_steps=6 format=3 uid="uid://ban8vqr32420f"]
 
 [ext_resource type="Shader" path="res://modules/start_menu/start_menu.gdshader" id="1_ncstg"]
 [ext_resource type="Script" path="res://modules/start_menu/start_menu.gd" id="1_qan61"]
+[ext_resource type="PackedScene" uid="uid://c3gvwja61h68n" path="res://modules/http/http.tscn" id="4_1kepp"]
 [ext_resource type="Texture2D" uid="uid://dx2tkr1bbfa6f" path="res://assets/textures/screen/logo.png" id="4_k003x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hatcv"]
@@ -167,6 +168,9 @@ theme_override_font_sizes/font_size = 5
 text = "Iniciar sesión
 "
 flat = true
+
+[node name="GetGamesRequest" parent="." instance=ExtResource("4_1kepp")]
+endpoint = "/games"
 
 [connection signal="pressed" from="Step1/HBoxContainer/Login" to="." method="_on_login_pressed"]
 [connection signal="pressed" from="Step1/HBoxContainer/Register" to="." method="_on_register_pressed"]
