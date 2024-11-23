@@ -1,3 +1,4 @@
+res://modules/game_selector
 res://modules/credits
 res://modules/select_game
 res://modules/register
@@ -19,4 +20,3 @@ res://modules/checkbox
 res://modules/question_layer
 res://modules/background
 res://modules/level_5
-res://modules/level_4

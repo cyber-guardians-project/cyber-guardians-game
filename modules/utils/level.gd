@@ -11,6 +11,8 @@ extends Node2D
 @onready var tile_map_layer = $TileMapLayer
 @onready var is_question_active = false
 @onready var hud = preload("res://modules/hud/hud.tscn") as PackedScene
+@onready var http = preload("res://modules/http/http.tscn") as PackedScene
+@onready var http_instance = http.instantiate()
 
 const RESULTS_SCREEN_SCENE = "res://modules/results_screen/results_screen.tscn"
 
@@ -22,12 +24,16 @@ var character_variation
 @onready var retry_dialog = preload("res://modules/dialog/dialog.tscn") as PackedScene
 
 
-func _ready():
-	StateManager.load_game()
-	
+func _ready():	
 	get_character()
-
 	hud_instance = hud.instantiate()
+	
+	http_instance.request_completed.connect(_on_request_completed)
+	add_child(http_instance)
+	
+	if not is_current_game():
+		create_game()
+	
 	
 	init_timer()
 	init_score()
@@ -37,8 +43,6 @@ func _ready():
 	add_child(hud_instance)
 	
 
-
-		
 func _process(delta: float):			
 	tile_map_layer.visible = !is_question_active
 	player.visible = !is_question_active
@@ -121,7 +125,6 @@ func show_results_screen(title: String, is_win: bool, message: String):
 	
 	var globals_to_keep = [Utils, State, StateManager, TransitionScreen]
 	
-	# Iterate through all children and free those that are not in the globals list
 	for child in root_children:
 		if child not in globals_to_keep:
 			child.queue_free()
@@ -147,10 +150,47 @@ func _on_show_score():
 	
 	StateManager.update_score(score)
 	StateManager.update_unlocked_levels(unlocked_levels)
-	StateManager.update_current_level(level + 1)
 	StateManager.save_game()
 	
-	show_results_screen('Resultados Nivel ' + str(level), true, '!Felicidades ' + StateManager.get_player_name() + '!')
+	show_results_screen('Resultados Nivel ' + str(level), true, '!Felicidades ' + StateManager.user.user_name + '!')
 	
 	
+func save_level():
+	pass
+	
+func create_game():
+	var game_data = {
+		"score": 0,
+		"character_variation": character_variation,
+		"current_level": 1,
+		"levels": {
+			"level": 1,
+			"score": 0,
+			"elapsed_time": 0
+		}
+	}
+	
+	make_http_request(HTTPClient.Method.METHOD_POST, '/games', game_data)
+	
+	
+	
+func make_http_request(method: HTTPClient.Method, endpoint: String, body: Dictionary) -> void:
+	var headers = ['Authorization: Bearer ' + StateManager.get_auth_token()]
+	http_instance.http_method = method
+	http_instance.endpoint = endpoint
+	
+	http_instance.make_request(body, headers)
+	
+	
+func is_current_game():
+	return len(StateManager.get_game()) > 0
+	
+func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+	var response_string = body.get_string_from_utf8()
+	var response_json = JSON.parse_string(response_string)
+	
+	if response_code != HTTPClient.RESPONSE_OK and response_code != HTTPClient.RESPONSE_CREATED:
+		Utils.show_dialog('Ocurrió un error al guardar la partida')
+	
+	print(response_json)
 	

@@ -48,8 +48,6 @@ func get_unlocked_levels() -> Array:
 func get_character_variation() -> int:
 	return State.get_character_variant()
 	
-func get_current_level() -> int:
-	return State.get_current_level()
 	
 func get_auth_token() -> String:
 	return State.get_auth_token()
@@ -59,6 +57,9 @@ func get_user() -> Dictionary:
 	
 func get_games() -> Array:
 	return State.get_games()
+	
+func get_game() -> Dictionary:
+	return State.get_game()
 
 
 func update_score(score: int) -> void:
@@ -70,8 +71,6 @@ func update_unlocked_levels(levels: Array) -> void:
 func update_character_variation(variation: int) -> void:
 	State.set_character_variant(variation)
 	
-func update_current_level(level: int) -> void:
-	State.set_current_level(level)
 	
 func update_auth_token(token: String) -> void:
 	State.set_auth_token(token)
@@ -81,3 +80,6 @@ func update_user(user: Dictionary) -> void:
 	
 func update_games(games: Array) -> void:
 	State.set_games(games)
+	
+func update_game(game: Dictionary) -> void:
+	State.set_game(game)
