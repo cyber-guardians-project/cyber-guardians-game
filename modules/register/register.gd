@@ -1,32 +1,35 @@
 extends Control
 
+@onready var user_name: LineEdit = $Username
 @onready var email: LineEdit = $Email
 @onready var password: LineEdit = $Password
-@onready var login_button: Button = $LoginButton
+@onready var birth_date: LineEdit = $BirthDate
+@onready var register_button: Button = $RegisterButton
 @onready var http: HTTPRequest = $Http
 
-var isPasswordSetted
-var isEmailSetted
+var isFromCorrect
 
 const LOGIN_SCENE = "res://modules/login/login.tscn"
 const START_SCREEN = "res://modules/start_menu/start_menu.tscn"
 
 
 func _ready() -> void:
-	login_button.pressed.connect(_on_login_button_pressed)
+	register_button.pressed.connect(_on_register_button_pressed)
 	http.request_completed.connect(_on_request_completed)
 	
 func _process(delta: float) -> void:
-	isPasswordSetted =  len(password.text) > 0
-	isEmailSetted =  len(email.text) > 0
+	isFromCorrect = len(user_name.text) > 0 and len(email.text) > 0 and len(password.text) > 0 and len(birth_date.text) > 0
+
 	
-	login_button.disabled = not(isEmailSetted and isPasswordSetted)
+	register_button.disabled = not(isFromCorrect)
 
 
-func _on_login_button_pressed() -> void:
+func _on_register_button_pressed() -> void:
 	var data = {
+		"user_name": user_name.text,
 		"email": email.text,
-		"password": password.text
+		"password": password.text,
+		"birth_date": birth_date.text
 	}
 	http.make_request(data)
 
@@ -44,7 +47,21 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		dialog_text = 'Ha ocurrido un error, vuelve a intentarlo'
 	
 	Utils.show_dialog(dialog_text)
+	
+	if response_code == HTTPClient.RESPONSE_CREATED or response_code == HTTPClient.RESPONSE_OK:
+		success_register(response_json)
 
+
+func success_register(response_json) -> void:
+	var auth_token = response_json.data.auth_token
+	var user = response_json.data.user
+	
+	StateManager.update_auth_token(auth_token)
+	StateManager.update_user(user)
+	StateManager.save_game()
+	
+	get_tree().change_scene_to_file(START_SCREEN)
+	
 
 func _on_login_pressed() -> void:
 	await Utils.transition()

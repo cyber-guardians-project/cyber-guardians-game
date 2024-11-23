@@ -56,6 +56,9 @@ func get_current_level() -> int:
 	
 func get_auth_token() -> String:
 	return State.get_auth_token()
+	
+func get_user() -> Dictionary:
+	return State.get_user()
 
 
 func update_player_name(name: String) -> void:
@@ -75,3 +78,7 @@ func update_current_level(level: int) -> void:
 	
 func update_auth_token(token: String) -> void:
 	State.set_auth_token(token)
+	
+		
+func update_user(user: Dictionary) -> void:
+	State.set_user(user)

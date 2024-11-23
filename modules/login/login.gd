@@ -50,8 +50,10 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 
 func success_login(response_json) -> void:
 	var auth_token = response_json.data.auth_token
+	var user = response_json.data.user
 	
 	StateManager.update_auth_token(auth_token)
+	StateManager.update_user(user)
 	StateManager.save_game()
 	
 	get_tree().change_scene_to_file(START_SCREEN)

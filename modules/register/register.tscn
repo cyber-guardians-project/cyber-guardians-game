@@ -109,9 +109,9 @@ offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 6
-placeholder_text = "Fecha de nacimiento"
+placeholder_text = "Fecha de nacimiento (YYYY-MM-DD)"
 
-[node name="LoginButton" type="Button" parent="."]
+[node name="RegisterButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -149,10 +149,11 @@ text = "Ya tienes cuenta? Inicia sesión"
 flat = true
 
 [node name="Http" parent="." instance=ExtResource("5_76m2s")]
-endpoint = "/auth/sign-in"
+endpoint = "/auth/sign-up"
 http_method = 2
 
 [node name="Back" type="Button" parent="."]
+layout_mode = 0
 offset_left = 215.0
 offset_top = 144.0
 offset_right = 239.0

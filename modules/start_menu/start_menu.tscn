@@ -138,6 +138,7 @@ text = "Salir
 flat = true
 
 [node name="Logout" type="Button" parent="."]
+layout_mode = 0
 offset_left = 199.0
 offset_top = 143.0
 offset_right = 240.0
@@ -153,6 +154,7 @@ flat = true
 
 [node name="GoLogin" type="Button" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 199.0
 offset_top = 143.0
 offset_right = 240.0

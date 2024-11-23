@@ -128,6 +128,7 @@ endpoint = "/auth/sign-in"
 http_method = 2
 
 [node name="Back" type="Button" parent="."]
+layout_mode = 0
 offset_left = 213.0
 offset_top = 143.0
 offset_right = 239.0

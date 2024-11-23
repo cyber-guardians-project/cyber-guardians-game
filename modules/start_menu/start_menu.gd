@@ -61,6 +61,7 @@ func is_user_authenticated():
 
 func _on_logout_pressed() -> void:
 	StateManager.update_auth_token('')
+	StateManager.update_user({})
 	StateManager.save_game()
 	isStep1 = true
 
