@@ -1,3 +1,5 @@
+res://modules/credits
+res://modules/select_game
 res://modules/register
 res://modules/audio_player
 res://modules/start_menu
@@ -18,5 +20,3 @@ res://modules/question_layer
 res://modules/background
 res://modules/level_5
 res://modules/level_4
-res://modules/level_3
-res://assets/textures/maps

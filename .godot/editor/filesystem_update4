@@ -22,3 +22,8 @@ res://modules/utils/state_manager.gd
 res://modules/login/login.gd
 res://modules/start_menu/start_menu.gd
 res://modules/register/register.gd
+res://modules/select_game/select_game.tscn
+res://modules/select_game/select_game.gdshader
+res://modules/credits/credits.gdshader
+res://themes/normal_font.tres
+res://modules/select_game/select_game.gd

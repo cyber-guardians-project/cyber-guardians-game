@@ -7,7 +7,7 @@ extends Control
 
 var isStep1: bool = true
 
-const SELECT_CHARACTER_SCENE = "res://modules/select_character/select_character.tscn"
+const SELECT_GAME_SCENE = "res://modules/select_game/select_game.tscn"
 const LOGIN_SCENE = "res://modules/login/login.tscn"
 const REGISTER_SCENE = "res://modules/register/register.tscn"
 
@@ -29,7 +29,7 @@ func _on_new_pressed():
 	StateManager.save_game()
 	
 	await Utils.transition()
-	get_tree().change_scene_to_file(SELECT_CHARACTER_SCENE)
+	get_tree().change_scene_to_file(SELECT_GAME_SCENE)
 
 
 func _on_continue_pressed():
