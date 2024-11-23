@@ -36,7 +36,14 @@ func _on_pressed() -> void:
 	if isEmptyGame():
 		await Utils.transition()
 		get_tree().change_scene_to_file(SELECT_CHARACTER_SCENE)
-	
+		
+	if not isEmptyGame():
+		var level_text = "level_" + str(game.current_level)
+		var level_scene = "res://modules/" + level_text + "/" + level_text + ".tscn"
+		
+		await Utils.transition()
+		get_tree().change_scene_to_file(level_scene)
+
 	print(game)
 	
 func isEmptyGame():
