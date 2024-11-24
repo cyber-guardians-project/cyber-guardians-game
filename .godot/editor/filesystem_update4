@@ -17,3 +17,4 @@ res://modules/login/login.tscn
 res://themes/checkbox.tres
 res://themes/title.tres
 res://modules/register/register.tscn
+res://modules/http/http.gd

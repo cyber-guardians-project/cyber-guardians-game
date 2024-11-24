@@ -13,7 +13,10 @@ func make_request(body: Dictionary = {}, request_headers: Array = headers):
 	var uri: String = Utils.api_url + endpoint
 	var data = JSON.stringify(body)
 	
-	request(uri, request_headers, http_method, data)
+	if http_method == HTTPClient.METHOD_GET:
+		request(uri, request_headers, http_method)
+	else:
+		request(uri, request_headers, http_method, data)
 
 func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	pass

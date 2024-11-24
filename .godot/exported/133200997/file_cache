@@ -29,9 +29,9 @@ res://themes/result_message.tres::447bba68f0e03aa46dc71a1717a095c3::1732471000::
 res://themes/resutl_label_value.tres::60bcc9f25c7237f84e07dc8a78b4e128::1732470999::res://.godot/exported/133200997/export-3b4c2577297bbbaefcbc956f71c9d00d-resutl_label_value.res
 res://themes/sub_mesage_label.tres::d68ae6956af0a8f875e2153771356313::1732470999::res://.godot/exported/133200997/export-d69954b183000e68e2e97e67fc3168a2-sub_mesage_label.res
 res://modules/http/http.tscn::4d7e219ffd7d34f42fbc4d33c48e62c3::1732418630::res://.godot/exported/133200997/export-b5fe1de974e55865302b714a07756e32-http.scn
-res://modules/login/login.tscn::df70f4f52b34cbfaf77778be30fb471c::1732471385::res://.godot/exported/133200997/export-1841f0f588bb191d233ea968e9268259-login.scn
+res://modules/login/login.tscn::df70f4f52b34cbfaf77778be30fb471c::1732472220::res://.godot/exported/133200997/export-1841f0f588bb191d233ea968e9268259-login.scn
 res://modules/audio_player/audio_player.tscn::685fbca2388650705db9fd68a75287cf::1732219585::res://.godot/exported/133200997/export-e3a6c4245cd7293747f0fc30f9f7dcae-audio_player.scn
-res://modules/credits/credits.tscn::1e4ba2e2594149211c02dd75d0456c84::1732471385::res://.godot/exported/133200997/export-87db6324351589e7b85d508f525ab31c-credits.scn
+res://modules/credits/credits.tscn::1e4ba2e2594149211c02dd75d0456c84::1732472220::res://.godot/exported/133200997/export-87db6324351589e7b85d508f525ab31c-credits.scn
 res://modules/game_selector/game_selector.tscn::0713568b9130724b0d05861a7fb2d2e1::1732418630::res://.godot/exported/133200997/export-83ac71470063b59644bd2e3665665731-game_selector.scn
-res://modules/register/register.tscn::f74f7ac1d453a811d7a4d48c53133755::1732471403::res://.godot/exported/133200997/export-3f88c526e59577522d021aa9b7dd5395-register.scn
+res://modules/register/register.tscn::f74f7ac1d453a811d7a4d48c53133755::1732472220::res://.godot/exported/133200997/export-3f88c526e59577522d021aa9b7dd5395-register.scn
 res://modules/select_game/select_game.tscn::5030b2a56e52f19628853cb65530605d::1732418630::res://.godot/exported/133200997/export-990b506512cea230bfb5623af7798c99-select_game.scn
