@@ -173,9 +173,6 @@ func create_game():
 func finish_level():
 	var game_data = StateManager.get_game()
 	var current_game_level = game_data.levels.filter(func(current_level): return current_level.level == level)
-
-	game_data.current_level = level + 1
-	game_data.score = get_total_score()
 	
 	if current_game_level.size() > 0:
 		var current_level = current_game_level[0]
@@ -200,6 +197,13 @@ func finish_level():
 		}
 		
 		game_data.levels.append(next_level_empty)
+		
+	game_data.current_level = level + 1
+	
+	StateManager.update_game(game_data)
+	StateManager.save_game()
+	
+	game_data.score = get_total_score()
 	
 	make_http_request(HTTPClient.Method.METHOD_PUT, '/games/' + str(game_data.id), game_data)
 
@@ -237,8 +241,8 @@ func get_elapsed_time() -> int:
 func get_total_score():
 	var total_score = 0
 	
-	for level in StateManager.get_game():
-		total_score += StateManager.get_game().get("score", 0)
+	for level in StateManager.get_game().levels:
+		total_score += level.score
 		
 	return total_score
 
