@@ -60,11 +60,6 @@ func init_timer():
 	hud_instance.connect('timer_timeout', _on_timeout)
 	
 func init_score():
-	var saved_score = StateManager.get_score()
-	
-	if saved_score:
-		score = saved_score
-	
 	hud_instance.score = score
 	
 func init_lives():
@@ -175,11 +170,11 @@ func create_game():
 	
 	make_http_request(HTTPClient.Method.METHOD_POST, '/games', game_data)
 	
-func finish_level(is_last: bool = false):
+func finish_level():
 	var game_data = StateManager.get_game()
 	var current_game_level = game_data.levels.filter(func(current_level): return current_level.level == level)
 
-	game_data.current_level = level
+	game_data.current_level = level + 1
 	game_data.score = get_total_score()
 	
 	if current_game_level.size() > 0:
@@ -196,6 +191,15 @@ func finish_level(is_last: bool = false):
 			}
 	
 		game_data.levels.append(level_data)
+		
+	if not is_last_level():
+		var next_level_empty = {
+			"level": level + 1,
+			"score": 0,
+			"elapsed_time": 0
+		}
+		
+		game_data.levels.append(next_level_empty)
 	
 	make_http_request(HTTPClient.Method.METHOD_PUT, '/games/' + str(game_data.id), game_data)
 
@@ -221,7 +225,9 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 	
 		
 	var game = response_json.data
+	
 	StateManager.update_game(game)
+	StateManager.save_game()
 	
 	
 func get_elapsed_time() -> int:
@@ -235,3 +241,6 @@ func get_total_score():
 		total_score += StateManager.get_game().get("score", 0)
 		
 	return total_score
+
+func is_last_level():
+	return Utils.last_level == level
