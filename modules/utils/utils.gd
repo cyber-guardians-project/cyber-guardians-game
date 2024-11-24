@@ -5,7 +5,7 @@ var player_variations_path = 'res://data/player_varations.json'
 var game_state_path = 'res://data/game_state.json'
 var last_level: int = 5
 var dialog = preload("res://modules/dialog/dialog.tscn")
-var api_url: String = 'http://127.0.0.1:8000'
+var api_url: String = 'https://cyber-guardians-api.onrender.com'
 
 
 func get_question_number(question_name: String) -> int:

@@ -1,3 +1,4 @@
+D:/Godot/projects/cyber-guardians-game/build/web
 res://modules/credits
 res://modules/game_selector
 res://modules/select_game
@@ -6,7 +7,6 @@ res://modules/audio_player
 res://modules/start_menu
 res://modules/login
 res://modules/http
-D:/Godot/projects/cyber-guardians-game/build/web
 D:/Godot/projects/cyber-guardians-game
 res://themes
 res://modules/transition_screen
