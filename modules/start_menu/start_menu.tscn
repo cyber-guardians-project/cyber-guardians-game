@@ -118,7 +118,7 @@ theme_override_font_sizes/font_size = 8
 text = "Aprender"
 flat = true
 
-[node name="Continue" type="Button" parent="Step2/HBoxContainer"]
+[node name="Credits" type="Button" parent="Step2/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.494118, 0.811765, 0.541176, 1)
 theme_override_colors/font_pressed_color = Color(0.320388, 0.276468, 0.316172, 1)
@@ -177,7 +177,7 @@ endpoint = "/games"
 [connection signal="pressed" from="Step1/HBoxContainer/guest" to="." method="_on_guest_pressed"]
 [connection signal="pressed" from="Step2/HBoxContainer/New" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="Step2/HBoxContainer/Learn" to="." method="_on_learn_pressed"]
-[connection signal="pressed" from="Step2/HBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Step2/HBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Step2/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Logout" to="." method="_on_logout_pressed"]
 [connection signal="pressed" from="GoLogin" to="." method="_on_go_login_pressed"]

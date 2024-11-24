@@ -17,6 +17,7 @@ extends CanvasLayer
 @onready var lives_value = $Background/ResultsContainer/LivesContainer/Value
 
 const START_MENU_SCENE = "res://modules/start_menu/start_menu.tscn"
+const CREDITS_SCENE = "res://modules/credits/credits.tscn"
 
 
 func _ready() -> void:
@@ -59,8 +60,8 @@ func _on_continue_pressed() -> void:
 		change_to_scene(next_level_scene)
 		
 	if is_win and level_number == Utils.last_level:
-		# TODO add game over scene
-		get_tree().quit()
+		await Utils.transition()
+		get_tree().change_scene_to_file(CREDITS_SCENE)
 		
 	if not is_win:
 		var level_text = 'level_' + str(level_number)

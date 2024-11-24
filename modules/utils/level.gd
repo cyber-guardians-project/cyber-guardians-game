@@ -124,6 +124,7 @@ func get_character():
 	
 func show_results_screen(title: String, is_win: bool, message: String):
 	await Utils.transition()
+	var socre_to_show = score if not StateManager.is_authenticated() else get_total_score()
 	
 	var root_children = get_tree().root.get_children()
 	
@@ -164,10 +165,6 @@ func _on_show_score():
 		message = '!Felicidades!'
 		
 	show_results_screen('Resultados Nivel ' + str(level), true, message)
-	
-	
-func save_level():
-	pass
 	
 func create_game():
 	var game_data = {
@@ -211,7 +208,7 @@ func finish_level():
 		
 		game_data.levels.append(next_level_empty)
 		
-	game_data.current_level = level + 1
+	game_data.current_level = level + 1 if not is_last_level() else Utils.last_level
 	
 	StateManager.update_game(game_data)
 	StateManager.save_game()

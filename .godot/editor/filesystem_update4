@@ -32,3 +32,8 @@ res://modules/http/http.gd
 res://modules/game_selector/game_selector.tscn
 res://modules/game_selector/game_selector.gd
 res://modules/utils/level.gd
+res://modules/credits/credits.tscn
+res://modules/credits/credits.gd
+res://modules/background/background.tscn
+res://modules/results_screen/results_screen.tscn
+res://modules/results_screen/results_screen.gd

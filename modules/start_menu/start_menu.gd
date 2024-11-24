@@ -12,6 +12,7 @@ const SELECT_GAME_SCENE = "res://modules/select_game/select_game.tscn"
 const LOGIN_SCENE = "res://modules/login/login.tscn"
 const REGISTER_SCENE = "res://modules/register/register.tscn"
 const SELECT_CHARACTER_SCENE = "res://modules/select_character/select_character.tscn"
+const CREDITS_SCENE = "res://modules/credits/credits.tscn"
 
 func _ready() -> void:
 	if is_user_authenticated():
@@ -89,3 +90,8 @@ func _on_get_games_request_request_completed(result: int, response_code: int, he
 	
 	StateManager.update_games(games)
 	StateManager.save_game()
+
+
+func _on_credits_pressed() -> void:
+	await Utils.transition()
+	get_tree().change_scene_to_file(CREDITS_SCENE)
