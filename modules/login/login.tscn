@@ -78,6 +78,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 6
 placeholder_text = "Contraseña"
+secret = true
 
 [node name="LoginButton" type="Button" parent="."]
 layout_mode = 1

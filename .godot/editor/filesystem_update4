@@ -13,3 +13,7 @@ res://modules/start_menu/start_menu.gdshader
 res://modules/login/login.gdshader
 res://modules/credits/credits.gdshader
 res://modules/utils/utils.gd
+res://modules/login/login.tscn
+res://themes/checkbox.tres
+res://themes/title.tres
+res://modules/register/register.tscn
