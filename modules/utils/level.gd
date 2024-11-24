@@ -177,21 +177,25 @@ func create_game():
 	
 func finish_level(is_last: bool = false):
 	var game_data = StateManager.get_game()
-	var current_level = game_data.current_level + 1 if not is_last else game_data.current_level
-	var current_game_level = game_data.levels.filter(func(current_level): return current_level.level == level)[0]
+	var current_game_level = game_data.levels.filter(func(current_level): return current_level.level == level)
 
-	game_data.current_level = current_level
+	game_data.current_level = level
 	game_data.score = get_total_score()
 	
-	var level_data =  {
-			"level": current_level ,
-			"score": score,
-			"elapsed_time": get_elapsed_time(),
-			"lives": lives
-		}
+	if current_game_level.size() > 0:
+		var current_level = current_game_level[0]
+		current_level.score = score
+		current_level.elapsed_time = get_elapsed_time()
+		current_level.lives = lives
+	else:
+		var level_data =  {
+				"level": game_data.current_level ,
+				"score": score,
+				"elapsed_time": get_elapsed_time(),
+				"lives": lives
+			}
 	
-		
-	game_data.levels.append(level_data)
+		game_data.levels.append(level_data)
 	
 	make_http_request(HTTPClient.Method.METHOD_PUT, '/games/' + str(game_data.id), game_data)
 
@@ -220,13 +224,14 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 	StateManager.update_game(game)
 	
 	
-func get_elapsed_time() -> float:
-	return time - hud_instance.timer.time_left
+func get_elapsed_time() -> int:
+	return int(floor(time - hud_instance.timer.time_left))
+
 
 func get_total_score():
 	var total_score = 0
 	
 	for level in StateManager.get_game():
-		total_score += level.get("score", 0)
+		total_score += StateManager.get_game().get("score", 0)
 		
 	return total_score
