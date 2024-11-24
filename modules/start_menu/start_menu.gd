@@ -11,7 +11,7 @@ var isStep1: bool = true
 const SELECT_GAME_SCENE = "res://modules/select_game/select_game.tscn"
 const LOGIN_SCENE = "res://modules/login/login.tscn"
 const REGISTER_SCENE = "res://modules/register/register.tscn"
-
+const SELECT_CHARACTER_SCENE = "res://modules/select_character/select_character.tscn"
 
 func _ready() -> void:
 	if is_user_authenticated():
@@ -19,19 +19,25 @@ func _ready() -> void:
 		isStep1 = false
 		get_games()
 		
+
+	
 func _process(delta: float) -> void:
 	step1.visible = isStep1
 	step2.visible = not isStep1
 	
 	logout.visible = not isStep1 and is_user_authenticated()
 	go_login.visible = not isStep1 and not is_user_authenticated()
-
+	
+	if not is_user_authenticated():
+		StateManager.clear_state()
+	
 func _on_new_pressed():
+	var next_scene = SELECT_GAME_SCENE if is_user_authenticated() else SELECT_CHARACTER_SCENE
 	StateManager.update_score(0)
 	StateManager.save_game()
 	
 	await Utils.transition()
-	get_tree().change_scene_to_file(SELECT_GAME_SCENE)
+	get_tree().change_scene_to_file(next_scene)
 
 
 func _on_continue_pressed():

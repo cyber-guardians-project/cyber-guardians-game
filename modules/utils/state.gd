@@ -27,6 +27,15 @@ func from_dict(data: Dictionary) -> void:
 	set_user(data.get('user', user))
 	set_games(data.get("games", games))
 	set_game(data.get("game", game))
+	
+func reset_to_defaults() -> void:
+	score = 0
+	unlocked_levels = [1]
+	character_variation = 0
+	auth_token = ''
+	user = {}
+	games = []
+	game = {}
 
 func get_score() -> int:
 	return score

@@ -3,7 +3,9 @@ extends Node
 const SAVE_FILE_PATH: String = "user://save_game.json"
 
 func _ready() -> void:
-	load_game()
+	if is_authenticated():
+		load_game()
+		
 
 func save_game() -> void:
 	print('save')
@@ -83,3 +85,10 @@ func update_games(games: Array) -> void:
 	
 func update_game(game: Dictionary) -> void:
 	State.set_game(game)
+	
+func is_authenticated():
+	return get_auth_token() != '' and get_user() != {}
+	
+func clear_state():
+	State.reset_to_defaults()
+	save_game()
