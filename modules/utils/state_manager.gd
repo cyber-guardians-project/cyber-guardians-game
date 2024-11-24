@@ -3,8 +3,7 @@ extends Node
 const SAVE_FILE_PATH: String = "user://save_game.json"
 
 func _ready() -> void:
-	if is_authenticated():
-		load_game()
+	load_game()
 		
 
 func save_game() -> void:

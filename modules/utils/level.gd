@@ -28,8 +28,9 @@ func _ready():
 	get_character()
 	hud_instance = hud.instantiate()
 	
-	http_instance.request_completed.connect(_on_request_completed)
-	add_child(http_instance)
+	if StateManager.is_authenticated():
+		http_instance.request_completed.connect(_on_request_completed)
+		add_child(http_instance)
 	
 	if is_empty_game():
 		create_game()
@@ -114,6 +115,11 @@ func show_dialog(message: String) -> void:
 	
 func get_character():
 	character_variation = StateManager.get_character_variation()
+	var game = StateManager.get_game()
+	
+	if StateManager.is_authenticated():
+		character_variation = StateManager.get_game().character_variation
+		
 	player.variation = character_variation
 	
 func show_results_screen(title: String, is_win: bool, message: String):
@@ -143,14 +149,21 @@ func show_results_screen(title: String, is_win: bool, message: String):
 func _on_show_score():
 	var unlocked_levels = StateManager.get_unlocked_levels()
 	var next_level = level + 1
+	var message: String
 	unlocked_levels.append(next_level)
 	
 	StateManager.update_score(score)
 	StateManager.update_unlocked_levels(unlocked_levels)
 	StateManager.save_game()
 	
-	finish_level()
-	show_results_screen('Resultados Nivel ' + str(level), true, '!Felicidades ' + StateManager.get_user().user_name + '!')
+	if StateManager.is_authenticated():	
+		finish_level()
+		message = '!Felicidades ' + StateManager.get_user().user_name + '!'
+		
+	if not StateManager.is_authenticated():
+		message = '!Felicidades!'
+		
+	show_results_screen('Resultados Nivel ' + str(level), true, message)
 	
 	
 func save_level():
