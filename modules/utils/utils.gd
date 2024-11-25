@@ -64,3 +64,18 @@ func show_dialog(text: String):
 	dialog.text = text
 	
 	add_child(dialog)
+
+
+func simulate_window_resize():
+	# Get the current window size using the viewport
+	var viewport = get_viewport()
+	var original_size = viewport.size
+
+	# Temporarily resize the window slightly larger
+	viewport.size = Vector2(original_size.x, original_size.y) + Vector2(1, 1)
+
+	# Restore the original size after a short delay
+	call_deferred("restore_window_size", original_size)
+
+func restore_window_size(original_size: Vector2):
+	get_viewport().size = original_size

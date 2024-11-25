@@ -25,6 +25,7 @@ var character_variation
 
 
 func _ready():	
+	Utils.simulate_window_resize()
 	get_character()
 	hud_instance = hud.instantiate()
 	
@@ -34,10 +35,6 @@ func _ready():
 	
 	if is_empty_game():
 		create_game()
-		
-	if not is_empty_game():
-		print('hola')
-	
 	
 	init_timer()
 	init_score()

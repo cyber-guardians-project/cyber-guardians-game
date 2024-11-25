@@ -171,7 +171,7 @@ offset_bottom = 753.0
 
 [node name="Title" type="Label" parent="ColorRect/Container/VerticalContainer6"]
 layout_mode = 2
-text = "!Gracias Por Jugar!"
+text = " ¡Gracias Por Jugar!"
 label_settings = ExtResource("3_wl03y")
 horizontal_alignment = 1
 
