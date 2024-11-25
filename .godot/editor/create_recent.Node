@@ -1,12 +1,13 @@
+Node2D
+Button
+Label
+ColorRect
 Area2D
 CollisionShape2D
 AudioStreamPlayer
-Button
-Label
 VBoxContainer
 Control
 Sprite2D
-ColorRect
 ScrollContainer
 VScrollBar
 PopupPanel

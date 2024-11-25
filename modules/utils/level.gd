@@ -15,11 +15,16 @@ extends Node2D
 @onready var http_instance = http.instantiate()
 
 const RESULTS_SCREEN_SCENE = "res://modules/results_screen/results_screen.tscn"
+const START_SCREEN_SCENE = 'res://modules/start_menu/start_menu.tscn'
 
+var pause_screen = preload("res://modules/pause_screen/pause_screen.tscn")
 var results_sceen = preload("res://modules/results_screen/results_screen.tscn")
 
 var hud_instance
+var pause_instance
 var character_variation
+var is_paused: bool = false
+signal pause(is_paused: bool)
 
 @onready var retry_dialog = preload("res://modules/dialog/dialog.tscn") as PackedScene
 
@@ -28,6 +33,7 @@ func _ready():
 	Utils.simulate_window_resize()
 	get_character()
 	hud_instance = hud.instantiate()
+	pause.connect(_on_pause)
 	
 	if StateManager.is_authenticated():
 		http_instance.request_completed.connect(_on_request_completed)
@@ -35,6 +41,7 @@ func _ready():
 	
 	if is_empty_game():
 		create_game()
+	
 	
 	init_timer()
 	init_score()
@@ -48,6 +55,9 @@ func _process(delta: float):
 	tile_map_layer.visible = !is_question_active
 	player.visible = !is_question_active
 	player.active = !is_question_active
+	
+	if Input.is_action_just_pressed('pause') and not is_paused:
+		pause.emit(true)
 	
 		
 func _on_open_question(is_open: bool):
@@ -255,3 +265,30 @@ func get_total_score():
 
 func is_last_level():
 	return Utils.last_level == level
+	
+	
+	
+func _on_pause(paused: bool):
+	is_paused = paused
+
+	if is_paused:
+		pause_instance = pause_screen.instantiate()
+		pause_instance.continue_pressed.connect(_on_continue_pressed)
+		pause_instance.back_pressed.connect(_on_back_pressed)
+		add_child(pause_instance)
+		get_tree().paused = true
+		
+func _on_continue_pressed():
+	pause_instance.queue_free()
+	get_tree().paused = false
+	is_paused = false
+	
+func _on_back_pressed() -> void:
+	get_tree().paused = false
+	is_paused = false
+	
+	await Utils.transition()
+	get_tree().change_scene_to_file(START_SCREEN_SCENE)
+
+	
+	

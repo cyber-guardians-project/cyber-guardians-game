@@ -1,3 +1,4 @@
+res://modules/pause_screen
 D:/Godot/projects/cyber-guardians-game/build/web
 res://modules/credits
 res://modules/game_selector
@@ -19,4 +20,3 @@ res://modules/dialog
 res://modules/checkbox
 res://modules/question_layer
 res://modules/background
-res://modules/level_5
