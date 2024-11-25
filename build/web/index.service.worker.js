@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1732472235|1255696197';
+const CACHE_VERSION = '1732504358|1805932695';
 /** @type {string} */
 const CACHE_PREFIX = 'cyber-guardians--sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
