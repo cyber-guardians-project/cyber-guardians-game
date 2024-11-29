@@ -127,7 +127,7 @@ func get_character():
 	character_variation = StateManager.get_character_variation()
 	var game = StateManager.get_game()
 	
-	if StateManager.is_authenticated():
+	if StateManager.is_authenticated() and not is_empty_game():
 		character_variation = StateManager.get_game().character_variation
 		
 	player.variation = character_variation
