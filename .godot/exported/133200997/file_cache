@@ -11,7 +11,7 @@ res://modules/tile_map_layer/tile_map_layer.tscn::6509d31ed9c44134093dcf20c2585e
 res://modules/checkbox/check_box.tscn::956805c84cb85e73b1740dd4a49f7cb9::1732504297::res://.godot/exported/133200997/export-87fcb8ba88428d1635e843a1694c25f7-check_box.scn
 res://modules/dialog/dialog.tscn::5e3af3eceebee7b43613b1345281a2bc::1731083627::res://.godot/exported/133200997/export-14f596d4246b1db808eb910b6349a8a1-dialog.scn
 res://modules/hud/hud.tscn::218ecd1a615d6191e531bde79c673c19::1731286316::res://.godot/exported/133200997/export-40bbda433d3eefa0b2b48e85b5cdb430-hud.scn
-res://modules/select_character/select_character.tscn::7724d6e91698b16ba8e2dec3c1df2e33::1732846731::res://.godot/exported/133200997/export-70d30de770bdbf391e0ab6b39b0301f5-select_character.scn
+res://modules/select_character/select_character.tscn::7724d6e91698b16ba8e2dec3c1df2e33::1732847077::res://.godot/exported/133200997/export-70d30de770bdbf391e0ab6b39b0301f5-select_character.scn
 res://modules/select_character_area/select_character_area.tscn::fcfbf27a4f679ddbbd2013e4be08fab1::1731270878::res://.godot/exported/133200997/export-918fdb658ce9c3b93c28901a15e7f50a-select_character_area.scn
 res://modules/start_menu/start_menu.tscn::ce93cd593acd233f4d967d02ecd568fa::1732504298::res://.godot/exported/133200997/export-92677802c927526e2d81c748401449aa-start_menu.scn
 res://modules/transition_screen/transition_screen.tscn::406436470b215591e4bcdebc821ca70a::1731254842::res://.godot/exported/133200997/export-f52df7228827fcb9dbf40bcb65a322af-transition_screen.scn
@@ -36,4 +36,4 @@ res://modules/game_selector/game_selector.tscn::0713568b9130724b0d05861a7fb2d2e1
 res://modules/register/register.tscn::f74f7ac1d453a811d7a4d48c53133755::1732504297::res://.godot/exported/133200997/export-3f88c526e59577522d021aa9b7dd5395-register.scn
 res://modules/select_game/select_game.tscn::5030b2a56e52f19628853cb65530605d::1732418630::res://.godot/exported/133200997/export-990b506512cea230bfb5623af7798c99-select_game.scn
 res://modules/pause_screen/pause_screen.tscn::9fce209d28523b887efe9b8c31f2202e::1732843624::res://.godot/exported/133200997/export-cbc7bcfcb74fc1cd6f3cd141833a0b67-pause_screen.scn
-res://modules/resources/resources.tscn::af5e169c10ea4f8a8364406860735ca3::1732846731::res://.godot/exported/133200997/export-7cd5a265cf9ea40b1fe20a4d7a011107-resources.scn
+res://modules/resources/resources.tscn::af5e169c10ea4f8a8364406860735ca3::1732847077::res://.godot/exported/133200997/export-7cd5a265cf9ea40b1fe20a4d7a011107-resources.scn
