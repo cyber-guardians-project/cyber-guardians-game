@@ -2,13 +2,18 @@ extends Control
 
 @onready var container: Control = $ColorRect/Container
 @onready var last_container: Control = $ColorRect/Container/VerticalContainer
+const AUDIO = "res://assets/audio/credits.mp3"
+
 
 const SCROLL_SPEED = 18.0
 const START_MENU_SCENE = "res://modules/start_menu/start_menu.tscn"
 
 var is_active: bool = true
 
-func _process(delta: float) -> void:
+func _ready() -> void:
+	Utils.play_music(AUDIO)
+
+func _process(delta: float) -> void:	
 	if is_active:	
 		var current_position = container.position
 		var new_position = Vector2(current_position.x, current_position.y - SCROLL_SPEED * delta)

@@ -22,7 +22,7 @@ func _ready() -> void:
 		if question_object.options:
 			for i in range(question_object.options.size()):
 				create_option_checkbox(question_object.options[i], i)
-
+				
 func create_option_checkbox(option: Dictionary, index: int) -> void:
 	var checkbox = checkbox_scene.instantiate()
 	

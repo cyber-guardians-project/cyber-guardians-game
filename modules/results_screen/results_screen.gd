@@ -18,9 +18,12 @@ extends CanvasLayer
 
 const START_MENU_SCENE = "res://modules/start_menu/start_menu.tscn"
 const CREDITS_SCENE = "res://modules/credits/credits.tscn"
+const WIN_AUDIO = "res://assets/audio/win.mp3"
+const LOSE_AUDIO = "res://assets/audio/lose.mp3"
 
 
 func _ready() -> void:
+	play_music()	
 	init_parameters()
 	
 
@@ -73,3 +76,9 @@ func change_to_scene(scene: String):
 	await Utils.transition()
 	queue_free()
 	get_tree().change_scene_to_file(scene)
+	
+func play_music():
+	var file_path = WIN_AUDIO if is_win else LOSE_AUDIO
+	print('music')
+	
+	Utils.play_music(file_path)

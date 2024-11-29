@@ -13,8 +13,12 @@ const LOGIN_SCENE = "res://modules/login/login.tscn"
 const REGISTER_SCENE = "res://modules/register/register.tscn"
 const SELECT_CHARACTER_SCENE = "res://modules/select_character/select_character.tscn"
 const CREDITS_SCENE = "res://modules/credits/credits.tscn"
+const AUDIO = "res://assets/audio/start.mp3"
+
 
 func _ready() -> void:
+	play_music()
+	
 	if is_user_authenticated():
 		get_games_request.request_completed.connect(_on_get_games_request_request_completed)
 		isStep1 = false
@@ -95,3 +99,7 @@ func _on_get_games_request_request_completed(result: int, response_code: int, he
 func _on_credits_pressed() -> void:
 	await Utils.transition()
 	get_tree().change_scene_to_file(CREDITS_SCENE)
+
+func play_music():
+	if not Utils.is_start_music_player():
+		Utils.play_music(AUDIO)

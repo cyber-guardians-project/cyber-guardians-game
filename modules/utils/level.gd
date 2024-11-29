@@ -16,6 +16,7 @@ extends Node2D
 
 const RESULTS_SCREEN_SCENE = "res://modules/results_screen/results_screen.tscn"
 const START_SCREEN_SCENE = 'res://modules/start_menu/start_menu.tscn'
+var audio: String
 
 var pause_screen = preload("res://modules/pause_screen/pause_screen.tscn")
 var results_sceen = preload("res://modules/results_screen/results_screen.tscn")
@@ -31,6 +32,7 @@ signal pause(is_paused: bool)
 
 func _ready():	
 	Utils.simulate_window_resize()
+	play_music()
 	get_character()
 	hud_instance = hud.instantiate()
 	pause.connect(_on_pause)
@@ -135,7 +137,7 @@ func show_results_screen(title: String, is_win: bool, message: String):
 	
 	var root_children = get_tree().root.get_children()
 	
-	var globals_to_keep = [Utils, State, StateManager, TransitionScreen]
+	var globals_to_keep = [Utils, State, StateManager, TransitionScreen, AudioPlayer]
 	
 	for child in root_children:
 		if child not in globals_to_keep:
@@ -290,5 +292,12 @@ func _on_back_pressed() -> void:
 	await Utils.transition()
 	get_tree().change_scene_to_file(START_SCREEN_SCENE)
 
+func play_music():
+	var level_text = 'level' + str(level) + '.mp3'
+	var file_path = "res://assets/audio/" + level_text
+	
+	Utils.set_is_start_music(false)
+	Utils.play_music(file_path)
+	
 	
 	

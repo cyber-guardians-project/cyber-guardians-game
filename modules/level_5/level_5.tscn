@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://bsb4g4rk1q5k1"]
+[gd_scene load_steps=5 format=4 uid="uid://bsb4g4rk1q5k1"]
 
 [ext_resource type="Script" path="res://modules/utils/level.gd" id="1_m3jsu"]
 [ext_resource type="PackedScene" uid="uid://cfrafbgupjqn6" path="res://modules/tile_map_layer/tile_map_layer.tscn" id="2_p1ngn"]
 [ext_resource type="PackedScene" uid="uid://d1j01lpi8ckyq" path="res://modules/player/player.tscn" id="3_fjhsc"]
 [ext_resource type="PackedScene" uid="uid://dsfdpei107ma6" path="res://modules/question_point/question_point.tscn" id="4_qui73"]
-[ext_resource type="AudioStream" uid="uid://0rfqmb1obkri" path="res://assets/audio/level5.mp3" id="5_anutl"]
 
 [node name="Level_5" type="Node2D"]
 script = ExtResource("1_m3jsu")
@@ -39,7 +38,3 @@ position = Vector2(152, 104)
 [node name="QuestionPoint_7" parent="Questions" instance=ExtResource("4_qui73")]
 position = Vector2(233, 88)
 is_last = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_anutl")
-autoplay = true

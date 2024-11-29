@@ -21,6 +21,7 @@ Utils="*res://modules/utils/utils.gd"
 State="*res://modules/utils/state.gd"
 StateManager="*res://modules/utils/state_manager.gd"
 TransitionScreen="*res://modules/transition_screen/transition_screen.tscn"
+AudioPlayer="*res://modules/audio_player/audio_player.tscn"
 
 [display]
 

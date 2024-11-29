@@ -7,7 +7,6 @@ var last_level: int = 5
 var dialog = preload("res://modules/dialog/dialog.tscn")
 var api_url: String = 'https://cyber-guardians-api.onrender.com'
 
-
 func get_question_number(question_name: String) -> int:
 	var question_name_parts: Array = question_name.split('_')
 	var question_number = int(question_name_parts[1])
@@ -79,3 +78,13 @@ func simulate_window_resize():
 
 func restore_window_size(original_size: Vector2):
 	get_viewport().size = original_size
+	
+func play_music(file_path: String, is_start_music: bool = false) -> void:
+	AudioPlayer.stop()
+	AudioPlayer.play(file_path)
+
+func is_start_music_player() -> bool:
+	return AudioPlayer.is_start_music
+
+func set_is_start_music(is_start_music: bool) -> void:
+	AudioPlayer.is_start_music = is_start_music
