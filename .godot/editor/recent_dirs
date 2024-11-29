@@ -1,3 +1,4 @@
+res://modules/resources
 res://modules/audio_player
 D:/Godot/projects/cyber-guardians-game/build/web
 res://modules/pause_screen
@@ -19,4 +20,3 @@ res://modules/select_character
 res://modules/dialog
 res://modules/checkbox
 res://modules/question_layer
-res://modules/background

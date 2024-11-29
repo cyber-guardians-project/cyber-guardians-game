@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://db0a2v5r7xl1h"]
+
+[ext_resource type="LabelSettings" uid="uid://cn1sxou71yp4n" path="res://themes/title.tres" id="1_1u5vn"]
+[ext_resource type="Script" path="res://modules/resources/resources.gd" id="1_mhevp"]
+[ext_resource type="Shader" path="res://modules/login/login.gdshader" id="2_qgicq"]
+[ext_resource type="LabelSettings" uid="uid://bsw2b0ga6edph" path="res://themes/result_label.tres" id="3_ugq3a"]
+[ext_resource type="Texture2D" uid="uid://bs331dm8sf3lu" path="res://assets/textures/screen/hack.png" id="4_w0imo"]
+[ext_resource type="Texture2D" uid="uid://bpvolatqu4a6i" path="res://assets/textures/screen/hack2.png" id="5_htcc7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3p8ng"]
+shader = ExtResource("2_qgicq")
+
+[node name="Resources" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhevp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_3p8ng")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0313726, 0.172549, 0.313726, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.5
+offset_top = 8.0
+offset_right = 49.5
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Recursos Educativos"
+label_settings = ExtResource("1_1u5vn")
+
+[node name="LinksContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="LinksContainer"]
+visible = false
+layout_mode = 0
+offset_left = 8.0
+offset_right = 48.0
+offset_bottom = 23.0
+text = "Enlaces:"
+label_settings = ExtResource("3_ugq3a")
+
+[node name="LinkButton" type="LinkButton" parent="LinksContainer"]
+layout_mode = 2
+offset_left = 80.0
+offset_top = 8.0
+offset_right = 165.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 8
+text = "Recursos Sharepoint"
+uri = "https://soysena-my.sharepoint.com/:w:/g/personal/elianllelys_flores_soy_sena_edu_co/EflYxZnHYKlBkT1cgjuJ73cBXytBlSsSb1spBiUfZsc2gA?rtime=GxLGexgQ3Ug"
+
+[node name="Sprite2D" type="Sprite2D" parent="LinksContainer"]
+position = Vector2(176, 64)
+scale = Vector2(0.084507, 0.115315)
+texture = ExtResource("5_htcc7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="LinksContainer"]
+position = Vector2(64, 64)
+scale = Vector2(0.084507, 0.115315)
+texture = ExtResource("4_w0imo")

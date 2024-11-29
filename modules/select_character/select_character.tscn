@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dunhvufcfosw8"]
+[gd_scene load_steps=7 format=3 uid="uid://dunhvufcfosw8"]
 
 [ext_resource type="Script" path="res://modules/select_character/select_character.gd" id="1_ir1ps"]
 [ext_resource type="PackedScene" uid="uid://d1j01lpi8ckyq" path="res://modules/player/player.tscn" id="1_nsh1n"]
+[ext_resource type="Shader" path="res://modules/start_menu/start_menu.gdshader" id="1_vudwq"]
 [ext_resource type="PackedScene" uid="uid://bgkw7yh376j78" path="res://modules/select_character_area/select_character_area.tscn" id="2_c64u0"]
 [ext_resource type="LabelSettings" uid="uid://cn1sxou71yp4n" path="res://themes/title.tres" id="2_g4q4l"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tp0g1"]
+shader = ExtResource("1_vudwq")
+
 [node name="SelectCharacter" type="ColorRect"]
+material = SubResource("ShaderMaterial_tp0g1")
 offset_right = 240.0
 offset_bottom = 160.0
 mouse_filter = 2

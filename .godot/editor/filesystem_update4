@@ -28,3 +28,8 @@ res://modules/credits/credits.gd
 res://modules/credits/credits.tscn
 res://modules/pause_screen/pause_screen.gd
 res://modules/question_point/question_point.gd
+res://themes/line_gradient.tres
+res://themes/title.tres
+res://modules/resources/resources.tscn
+res://modules/select_character/select_character.tscn
+res://modules/resources/resources.gd
