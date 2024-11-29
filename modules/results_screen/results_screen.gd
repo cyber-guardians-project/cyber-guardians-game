@@ -63,8 +63,7 @@ func _on_continue_pressed() -> void:
 		change_to_scene(next_level_scene)
 		
 	if is_win and level_number == Utils.last_level:
-		await Utils.transition()
-		get_tree().change_scene_to_file(CREDITS_SCENE)
+		change_to_scene(CREDITS_SCENE)
 		
 	if not is_win:
 		var level_text = 'level_' + str(level_number)

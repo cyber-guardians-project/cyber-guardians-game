@@ -2,9 +2,8 @@ extends Control
 
 @onready var container: Control = $ColorRect/Container
 @onready var last_container: Control = $ColorRect/Container/VerticalContainer
+
 const AUDIO = "res://assets/audio/credits.mp3"
-
-
 const SCROLL_SPEED = 18.0
 const START_MENU_SCENE = "res://modules/start_menu/start_menu.tscn"
 
