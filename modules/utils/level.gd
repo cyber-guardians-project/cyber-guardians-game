@@ -60,7 +60,7 @@ func _process(delta: float):
 	
 	if Input.is_action_just_pressed('pause') and not is_paused:
 		pause.emit(true)
-	
+		
 		
 func _on_open_question(is_open: bool):
 	is_question_active = is_open
@@ -272,6 +272,8 @@ func is_last_level():
 	
 func _on_pause(paused: bool):
 	is_paused = paused
+	
+	print(get_tree().get_nodes_in_group('QuestionLayer'), 'layer')
 
 	if is_paused:
 		pause_instance = pause_screen.instantiate()

@@ -26,3 +26,4 @@ res://modules/results_screen/results_screen.tscn
 res://modules/results_screen/results_screen.gd
 res://modules/credits/credits.gd
 res://modules/credits/credits.tscn
+res://modules/pause_screen/pause_screen.gd
