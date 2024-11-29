@@ -13,6 +13,7 @@ const LOGIN_SCENE = "res://modules/login/login.tscn"
 const REGISTER_SCENE = "res://modules/register/register.tscn"
 const SELECT_CHARACTER_SCENE = "res://modules/select_character/select_character.tscn"
 const CREDITS_SCENE = "res://modules/credits/credits.tscn"
+const RESOURCES_SCENE = "res://modules/resources/resources.tscn"
 const AUDIO = "res://assets/audio/start.mp3"
 
 
@@ -49,7 +50,8 @@ func _on_continue_pressed():
 	pass # Replace with function body.
 
 func _on_learn_pressed() -> void:
-	pass # Replace with function body.
+	await Utils.transition()
+	get_tree().change_scene_to_file(RESOURCES_SCENE)
 
 func _on_exit_pressed():
 	get_tree().quit()

@@ -1,3 +1,4 @@
+Button
 Sprite2D
 Label
 Control
@@ -5,7 +6,6 @@ LinkButton
 VBoxContainer
 ColorRect
 Node2D
-Button
 Area2D
 CollisionShape2D
 AudioStreamPlayer
