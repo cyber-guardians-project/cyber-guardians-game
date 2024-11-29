@@ -32,6 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 		question_instance.question = question
 		question_instance.connect('select_option', _on_select_option)
 		
+		question_instance.add_to_group("QuestionLayer")
 		get_tree().root.add_child(question_instance)
 	
 func _on_select_option(option):

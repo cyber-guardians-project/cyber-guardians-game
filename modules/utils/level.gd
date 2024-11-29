@@ -20,6 +20,7 @@ var audio: String
 
 var pause_screen = preload("res://modules/pause_screen/pause_screen.tscn")
 var results_sceen = preload("res://modules/results_screen/results_screen.tscn")
+var question_layer_instance
 
 var hud_instance
 var pause_instance
@@ -273,9 +274,13 @@ func is_last_level():
 func _on_pause(paused: bool):
 	is_paused = paused
 	
-	print(get_tree().get_nodes_in_group('QuestionLayer'), 'layer')
-
 	if is_paused:
+		var question_layer = get_tree().get_nodes_in_group("QuestionLayer")
+		
+		if(len(question_layer) > 0):
+			question_layer_instance = question_layer[0]
+			question_layer_instance.visible = false
+			
 		pause_instance = pause_screen.instantiate()
 		pause_instance.continue_pressed.connect(_on_continue_pressed)
 		pause_instance.back_pressed.connect(_on_back_pressed)
@@ -286,6 +291,10 @@ func _on_continue_pressed():
 	pause_instance.queue_free()
 	get_tree().paused = false
 	is_paused = false
+	
+	if question_layer_instance:
+		question_layer_instance.visible = true
+		question_layer_instance = []
 	
 func _on_back_pressed() -> void:
 	get_tree().paused = false
