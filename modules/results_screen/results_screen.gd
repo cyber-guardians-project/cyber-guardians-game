@@ -78,6 +78,6 @@ func change_to_scene(scene: String):
 	
 func play_music():
 	var file_path = WIN_AUDIO if is_win else LOSE_AUDIO
-	print('music')
+	Utils.set_is_start_music(false)
 	
 	Utils.play_music(file_path)

@@ -102,4 +102,5 @@ func _on_credits_pressed() -> void:
 
 func play_music():
 	if not Utils.is_start_music_player():
+		Utils.set_is_start_music(true)
 		Utils.play_music(AUDIO)

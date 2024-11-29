@@ -10,6 +10,7 @@ const START_MENU_SCENE = "res://modules/start_menu/start_menu.tscn"
 var is_active: bool = true
 
 func _ready() -> void:
+	Utils.set_is_start_music(false)
 	Utils.play_music(AUDIO)
 
 func _process(delta: float) -> void:	
